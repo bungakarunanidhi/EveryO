@@ -203,7 +203,7 @@ def _report_benchmark(results: list[dict[str, Any]], args: argparse.Namespace) -
         target = Path(args.output)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(json.dumps(results, indent=2), encoding="utf-8")
-        print(f"\nWrote results to {target}")
+        print(f"\nWrote results to {target}", file=sys.stderr if args.json else sys.stdout)
 
 
 def _command_test(args: argparse.Namespace) -> int:
