@@ -127,8 +127,11 @@ print(trainer.evaluate(eo.DataLoader(eo.ArrayDataset(x_test, y_test), batch_size
 Images are `NHWC` — `(batch, height, width, channels)` — so a single-channel
 8x8 image batch has shape `(n, 8, 8, 1)`:
 
+This separate architecture is named `cnn` so the trained `model` above remains
+available for evaluation and saving.
+
 ```python
-model = eo.Sequential(
+cnn = eo.Sequential(
     eo.Conv2D(1, 8, 3, padding="same"),
     eo.ReLU(),
     eo.MaxPool2D(2),
@@ -146,6 +149,9 @@ a `(height, width)` pair. See `examples/convolutional_network.py`.
 ## Charts, saving and loading
 
 ```python
+from pathlib import Path
+
+Path("artifacts").mkdir(exist_ok=True)
 eo.plot_history(history, save_path="artifacts/history.png")
 
 eo.save(model, "artifacts/model.evo")

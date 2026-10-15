@@ -47,6 +47,15 @@ class TestDoctor:
 
 
 class TestBenchmark:
+    def test_json_stdout_stays_parseable_when_saving(self, tmp_path, capsys, monkeypatch):
+        rows = [{"benchmark": "matmul", "seconds": 0.01}]
+        monkeypatch.setattr("everyo.benchmarking.run_matmul_benchmark", lambda **kwargs: rows)
+        target = tmp_path / "nested" / "results.json"
+        assert main(["benchmark", "--json", "--output", str(target)]) == 0
+        captured = capsys.readouterr()
+        assert json.loads(captured.out) == json.loads(target.read_text()) == rows
+        assert "Wrote results" in captured.err
+
     @pytest.mark.slow
     def test_small_benchmark_runs(self, capsys):
         assert main(["benchmark", "--sizes", "32", "--repeats", "1"]) == 0

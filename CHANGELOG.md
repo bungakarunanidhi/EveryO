@@ -6,7 +6,17 @@ All notable changes to EveryO are recorded here. The format follows
 
 ## [Unreleased]
 
-Nothing yet.
+### Fixed
+
+- Keep benchmark stdout valid JSON when `--json` and `--output` are combined;
+  the file confirmation is written to stderr.
+- Preserve the trained model when following the getting-started guide through
+  the CNN architecture and serialization sections.
+
+### Changed
+
+- Refine repository introduction, documentation navigation, installation guidance,
+  and the example catalog for a clearer developer onboarding experience.
 
 ## [0.2.0] - 2026-09-19
 

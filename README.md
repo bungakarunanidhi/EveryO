@@ -2,11 +2,11 @@
 
 <img src="docs/assets/banner.png" alt="EveryO — open-source neural computing framework" width="100%">
 
-<h3>Neural networks, from the math up — not from a wrapper down.</h3>
+<h3>Neural computing for learning, experimentation, and numerical analysis.</h3>
 
 <p><b>EveryO</b> is a neural computing framework whose autograd engine, layers, optimizers and training loop
 are written from scratch on NumPy — then accelerated with optional CUDA kernels and cross-checked against TensorFlow.<br>
-Small enough to read in an afternoon. Correct enough to trust.</p>
+Designed for readable implementations, reproducible experiments, and explicit validation.</p>
 
 [![tests](https://github.com/krishanth7/EveryO/actions/workflows/tests.yml/badge.svg)](https://github.com/krishanth7/EveryO/actions/workflows/tests.yml)
 [![CUDA build](https://github.com/krishanth7/EveryO/actions/workflows/cuda-build.yml/badge.svg)](https://github.com/krishanth7/EveryO/actions/workflows/cuda-build.yml)
@@ -29,9 +29,9 @@ automatic differentiation, layers, optimizers, the training loop, serialization 
 implemented here, on top of NumPy. It is not a wrapper around PyTorch, TensorFlow or JAX, and it
 does not call out to one at runtime.
 
-The point is legibility. The gradient engine is **261 lines**. The whole package is **~12,700 lines**
-across 70 focused modules. You can follow one number from `loss.backward()` through the graph walk,
-into a matrix multiply, and out to a hand-written CUDA kernel — reading real code the entire way.
+The implementation is organized around tensors, automatic differentiation, neural-network
+modules, optimization, and training. Start with `loss.backward()` and follow the graph
+traversal and individual gradient implementations directly in the source.
 
 Legibility is worthless without correctness, so every differentiable operation is checked against
 central finite differences, and the numerical results are checked against TensorFlow. Where the two
@@ -47,8 +47,9 @@ BUILD  →  TRAIN  →  MEASURE  →  UNDERSTAND  →  ACCELERATE
   operation you use, not just call it.
 - **Engineers who need to verify a result** — a small, deterministic, dependency-light reference
   you can step through in a debugger.
-- **Teachers and students** — no accounts, no API keys, no downloads, no network access. `pip install -e .`
-  and everything in this README runs.
+- **Teachers and students** — core workflows need no accounts or API keys. Installation
+  downloads Python dependencies; bundled examples generate data locally and can run offline
+  once their dependencies are installed.
 
 ### What it is not
 
@@ -76,9 +77,16 @@ for you to discover — the [Roadmap](#-roadmap) says exactly what was verified 
 
 ## ⚡ Quick start (60 seconds)
 
+Use Python 3.9–3.12 and an isolated environment. See the
+[installation guide](docs/getting-started.md) for Windows activation and optional backends.
+
 ```bash
 git clone https://github.com/krishanth7/EveryO.git
-cd EveryO && pip install -e .
+cd EveryO
+python -m venv .venv
+source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -e .
+everyo doctor        # check the installation and core gradient calculation
 everyo demo          # trains a digit classifier end to end
 ```
 
