@@ -2,12 +2,11 @@
 
 <img src="docs/assets/banner.png" alt="EveryO — open-source neural computing framework" width="100%">
 
-<h3>Neural networks, from the math up — not from a wrapper down.</h3>
+<h3>Neural computing for learning, experimentation, and numerical analysis.</h3>
 
-<p><b>EveryO</b> is a complete deep learning framework — autograd, layers, optimizers, the training
-loop, ONNX export, quantization, profiling and distributed training — written from scratch on NumPy,
-accelerated with optional CUDA kernels and cross-checked against TensorFlow.<br>
-Small enough to read in an afternoon. Correct enough to trust.</p>
+<p><b>EveryO</b> is a neural computing framework whose autograd engine, layers, optimizers and training loop
+are written from scratch on NumPy — then accelerated with optional CUDA kernels and cross-checked against TensorFlow.<br>
+Designed for readable implementations, reproducible experiments, and explicit validation.</p>
 
 [![version](https://img.shields.io/github/v/tag/krishanth7/EveryO?label=version&color=2a78d6)](https://github.com/krishanth7/EveryO/releases)
 [![tests](https://github.com/krishanth7/EveryO/actions/workflows/tests.yml/badge.svg)](https://github.com/krishanth7/EveryO/actions/workflows/tests.yml)
@@ -26,85 +25,49 @@ Small enough to read in an afternoon. Correct enough to trust.</p>
 
 ## What is EveryO?
 
-**EveryO is a complete deep learning framework that a person can actually read.**
+EveryO is a **neural network framework written from scratch in Python** for learning,
+teaching, and small-scale experiments. Its NumPy core implements tensors, automatic
+differentiation, layers, optimizers, and training. Optional integrations provide CUDA
+operations, TensorFlow reference checks, and ONNX export.
 
-Tensors, reverse-mode automatic differentiation, layers, optimizers, the training loop,
-serialization, ONNX export, quantization, profiling and distributed training are all implemented
-in this repository, in Python on NumPy. Nothing here wraps PyTorch, TensorFlow or JAX, and nothing
-calls out to one at runtime.
-
-The whole package is **~12,800 lines across 70 focused modules**, and the gradient engine at the
-centre of it is **261 lines**. You can follow a single number from `loss.backward()`, through the
-graph walk, into a matrix multiply, and out to a hand-written CUDA kernel — reading real code the
-entire way.
+The implementation is organized around tensors, automatic differentiation, neural-network
+modules, optimization, and training. Start with `loss.backward()` and follow the graph
+traversal and individual gradient implementations directly in the source.
 
 ### At a glance
 
-| | |
+| Area | Scope |
 |---|---|
-| **What it is** | A from-scratch neural network framework — autograd, layers, optimizers, training loop, two ONNX exporters, int8 quantization, a profiler, and data-parallel training on one machine or several |
-| **What it is for** | Understanding how deep learning works, verifying a result against a readable reference, teaching, and small CPU-scale experiments |
-| **What it runs on** | Python 3.9–3.12 on Linux, macOS and Windows. NumPy is the only hard dependency |
-| **What is optional** | CUDA kernels, TensorFlow cross-checks, ONNX export, Plotly dashboards — each absent without breaking anything |
-| **What it never does** | No accounts, no API keys, no network calls, no telemetry. Loading a model cannot execute code |
-| **Maturity** | v0.2.0. Every roadmap item is shipped; see [what "implemented" means](#what-implemented-means-for-each-one) for what was verified and what was not |
-| **Licence** | MIT |
-
-Legibility is worthless without correctness, so every differentiable operation is checked against
-central finite differences, and the numerical results are checked against TensorFlow. Where the two
-disagree, this README says by how much.
-
-```
-BUILD  →  TRAIN  →  MEASURE  →  UNDERSTAND  →  ACCELERATE
-```
+| Core | Tensors, autograd, neural networks, optimizers, training, and serialization |
+| Additional tools | ONNX exporters, dynamic int8 quantization, profiling, and data-parallel training |
+| Platforms | Python 3.9–3.12 on Linux, macOS, and Windows for the CPU workflow |
+| Optional components | CUDA, TensorFlow reference checks, ONNX, and Plotly dashboards |
+| Runtime | Core workflows run locally without accounts, API keys, or telemetry |
+| Validation limits | See [what was verified](#what-implemented-means-for-each-one), including GPU and multi-machine limitations |
+| License | MIT |
 
 ### What you would use it for
 
-**1. Learning how a framework actually works.** Every derivative you use is code you can open.
-There is no compiled kernel hiding the interesting part, and no binding layer to stop at:
-
-| To understand | Read | Lines |
-|---|---|---:|
-| How gradients flow backwards | [`everyo/core/autograd.py`](everyo/core/autograd.py) | 261 |
-| What a tensor actually is | [`everyo/core/tensor.py`](everyo/core/tensor.py) | 554 |
-| How convolution is computed and differentiated | [`everyo/core/convolution.py`](everyo/core/convolution.py) | 390 |
-| How Adam updates a weight | [`everyo/optim/adam.py`](everyo/optim/adam.py) | 97 |
-
-**2. Checking a result you do not trust.** A small, deterministic, dependency-light implementation
-makes a good second opinion. Every gradient here is checked against central finite differences, and
-every forward pass against TensorFlow, so the reference has itself been referenced:
-
-```python
-import tensorflow as tf
-
-ours = eo.conv2d(eo.tensor(image), eo.tensor(kernel)).numpy()
-theirs = tf.nn.conv2d(image, kernel, strides=1, padding="VALID").numpy()
-
-abs(ours - theirs).max()  # 0.0 — this exact check runs in tests/test_conv.py
-```
-
-**3. Teaching and coursework.** No accounts, no API keys, no downloads, no network access.
-`pip install -e .` and every figure and number in this README reproduces on a laptop.
-
-**4. Small experiments where legibility beats throughput.** Transformers, CNNs and LSTMs all train
-here on CPU in seconds — fast enough to iterate on an idea, and readable enough to explain the
-result afterwards.
-
-**5. Getting a model out again.** Nothing here is a one-way door: `export_onnx` and
-`export_onnx_traced` cover the whole library between them, and both are verified by re-running the
-exported graph through ONNX Runtime rather than by trusting the schema checker.
+- **Learning the implementation:** follow gradients in [autograd.py](everyo/core/autograd.py),
+  tensor storage in [tensor.py](everyo/core/tensor.py), convolution in
+  [convolution.py](everyo/core/convolution.py), and updates in [adam.py](everyo/optim/adam.py).
+- **Checking numerical results:** inspect the finite-difference tests and optional
+  TensorFlow comparisons, including [convolution tests](tests/test_conv.py).
+- **Teaching and coursework:** bundled examples generate data locally and can run offline
+  once dependencies are installed. Installation may download Python packages.
+- **Small CPU experiments:** build CNNs, recurrent networks, or transformers with a readable
+  training stack. Runtime depends on model size and hardware.
+- **Exporting supported models:** use `export_onnx` or `export_onnx_traced`; review the
+  [export limitations](docs/scaling.md) before relying on the resulting graph.
 
 ### When to use something else
 
-Being useful means being clear about where the boundary is:
-
-| Your situation | Use |
+| Your situation | Direction |
 |---|---|
-| Learning, teaching, verifying, or reading the implementation | **EveryO** |
-| Small models, CPU, where iteration speed and clarity matter more than throughput | **EveryO** |
-| Training a large model, or anything where wall-clock time is the constraint | **PyTorch or JAX** — EveryO is a readable reference, not a tuned runtime |
-| Production serving with hardware acceleration | Export from EveryO to **ONNX Runtime**, or use a production framework directly |
-| You need a mature ecosystem of pretrained weights and third-party layers | **PyTorch** |
+| Learning, teaching, or inspecting numerical implementations | EveryO |
+| Large-scale training or optimized accelerator execution | A mature training framework such as PyTorch or JAX |
+| Production inference | Validate a supported ONNX export with your target runtime, or use a production framework |
+| A broad ecosystem of pretrained models and third-party layers | An established framework and model ecosystem |
 
 ### What it is not
 
@@ -132,9 +95,16 @@ for you to discover — the [Roadmap](#-roadmap--all-shipped) says exactly what 
 
 ## ⚡ Quick start (60 seconds)
 
+Use Python 3.9–3.12 and an isolated environment. See the
+[installation guide](docs/getting-started.md) for Windows activation and optional backends.
+
 ```bash
 git clone https://github.com/krishanth7/EveryO.git
-cd EveryO && pip install -e .
+cd EveryO
+python -m venv .venv
+source .venv/bin/activate  # Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -e .
+everyo doctor        # check the installation and core gradient calculation
 everyo demo          # trains a digit classifier end to end
 ```
 
@@ -299,12 +269,12 @@ cross-entropy  vs TensorFlow ............. exact to 6 decimal places
 its GRADIENT   vs TensorFlow ............. 3.725e-09
 ```
 
-**791 tests** run in about 25 seconds on a laptop CPU. CUDA tests skip themselves without a GPU;
-TensorFlow tests skip themselves without TensorFlow; the ONNX tests skip without the optional `onnx`
-extra, leaving 712. The core suite needs no network, no GPU and no credentials.
+The suite includes CPU tests and optional CUDA, TensorFlow, and ONNX checks.
+Test totals and skips depend on the installed dependencies and available hardware;
+use the current CI run and your local pytest summary for results.
 
 ```bash
-pytest                    # 791 passed, 9 skipped   (712 without the onnx extra)
+python -m pytest
 ./scripts/lint.sh         # ruff check + format check
 ```
 

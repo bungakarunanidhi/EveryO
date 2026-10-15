@@ -24,8 +24,11 @@ python examples/tensor_basics.py
 | `save_and_load.py` | Saving, inspecting and reloading an `.evo` archive |
 | `tensorflow_backend.py` | Cross-checking EveryO against TensorFlow (optional) |
 | `cuda_example.py` | CUDA detection, correctness check and CPU fallback |
+| `onnx_trace.py` | Trace-based export of recurrent and attention models (ONNX extra) |
+| `quantization.py` | Dynamic INT8 quantization and comparison with the float model |
+| `profiling.py` | Model timing and trace export for performance analysis |
 
-`onnx_export.py` needs the optional `onnx` extra (`pip install everyo[onnx]`) and reports cleanly
+`onnx_export.py` needs the optional `onnx` extra (`python -m pip install -e ".[onnx]"`) and reports cleanly
 when it is missing. Run `distributed_training.py` with `OMP_NUM_THREADS=1` set, or each worker will
 start its own BLAS thread pool and they will contend:
 
