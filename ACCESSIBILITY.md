@@ -1,1040 +1,983 @@
 
-# Accessibility at EveryO
+<div align="center">
 
-> **Building machine learning tools that are accessible, understandable, and usable by everyone.**
+# ACCESSIBILITY
 
-[![Accessibility](https://img.shields.io/badge/Accessibility-Continuous%20Improvement-blue)](ACCESSIBILITY.md)
-[![WCAG](https://img.shields.io/badge/WCAG-2.2%20AA%20Target-005A9C)](https://www.w3.org/TR/WCAG22/)
-[![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen)](CONTRIBUTING.md)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+### EveryO — Accessibility Policy, Standards & Engineering Governance
 
-**Project:** EveryO  
-**Document:** Accessibility Policy and Engineering Guidelines  
-**Version:** 1.0  
-**Last Updated:** October 2026  
-**Maintained By & Owner:** EveryO Contributors & @krishanth7
+**Inclusive Engineering · Accessible Machine Learning · Responsible Open Source**
+
+[![Accessibility](https://img.shields.io/badge/Accessibility-Continuous%20Improvement-2563EB?style=for-the-badge)](ACCESSIBILITY.md)
+[![WCAG 2.2](https://img.shields.io/badge/WCAG%202.2-AA%20Target-087E8B?style=for-the-badge)](https://www.w3.org/TR/WCAG22/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-15803D?style=for-the-badge)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-7C3AED?style=for-the-badge)](CONTRIBUTING.md)
+
+**Document Version:** `1.0.0`  
+**Effective Date:** October 15, 2026  
+**Classification:** Public · Open-Source Governance  
+**Maintained By & Owner:** **EveryO Contributors & [@krishanth7](https://github.com/krishanth7)**  
+**Repository:** [github.com/krishanth7/EveryO](https://github.com/krishanth7/EveryO)  
+**Document Status:** **Active — Continuous Improvement**
 
 ---
 
-## Table of Contents
+*Making advanced machine learning development more accessible, understandable, and inclusive.*
 
-1. [Our Accessibility Commitment](#1-our-accessibility-commitment)
-2. [Purpose and Scope](#2-purpose-and-scope)
-3. [Accessibility Principles](#3-accessibility-principles)
-4. [Standards and Guidelines](#4-standards-and-guidelines)
-5. [Accessibility Conformance Status](#5-accessibility-conformance-status)
-6. [Documentation Accessibility](#6-documentation-accessibility)
-7. [Command-Line Interface Accessibility](#7-command-line-interface-accessibility)
-8. [Python API Accessibility](#8-python-api-accessibility)
-9. [Data Visualization Accessibility](#9-data-visualization-accessibility)
-10. [Assistive Technology Compatibility](#10-assistive-technology-compatibility)
-11. [Keyboard Accessibility](#11-keyboard-accessibility)
-12. [Visual Accessibility](#12-visual-accessibility)
-13. [Cognitive Accessibility](#13-cognitive-accessibility)
-14. [Accessible Error Handling](#14-accessible-error-handling)
-15. [Machine Learning Accessibility](#15-machine-learning-accessibility)
-16. [Web Interface Accessibility](#16-web-interface-accessibility)
-17. [Accessibility Testing](#17-accessibility-testing)
+</div>
+
+> [!IMPORTANT]
+> **Accessibility Commitment**
+>
+> EveryO is committed to reducing accessibility barriers across its documentation, Python APIs, command-line tools, machine learning workflows, visualizations, and community processes.
+>
+> **WCAG 2.2 Level AA is a target for applicable web-based content and interfaces, not a claim of verified conformance.**
+>
+> This document establishes project objectives, engineering expectations, governance responsibilities, and recommended validation procedures.
+
+---
+
+# Table of Contents
+
+1. [Executive Statement](#1-executive-statement)
+2. [Document Governance](#2-document-governance)
+3. [Accessibility Vision and Mission](#3-accessibility-vision-and-mission)
+4. [Scope and Applicability](#4-scope-and-applicability)
+5. [Accessibility Principles](#5-accessibility-principles)
+6. [Standards and Conformance](#6-standards-and-conformance)
+7. [Documentation Accessibility](#7-documentation-accessibility)
+8. [Command-Line Accessibility](#8-command-line-accessibility)
+9. [Python API Accessibility](#9-python-api-accessibility)
+10. [Data Visualization Accessibility](#10-data-visualization-accessibility)
+11. [Assistive Technology Support](#11-assistive-technology-support)
+12. [Visual and Cognitive Accessibility](#12-visual-and-cognitive-accessibility)
+13. [Accessible Error Handling](#13-accessible-error-handling)
+14. [Machine Learning Accessibility](#14-machine-learning-accessibility)
+15. [Web and Interactive Interfaces](#15-web-and-interactive-interfaces)
+16. [Accessibility Engineering Requirements](#16-accessibility-engineering-requirements)
+17. [Testing and Quality Assurance](#17-testing-and-quality-assurance)
 18. [Continuous Integration](#18-continuous-integration)
-19. [Reporting Accessibility Issues](#19-reporting-accessibility-issues)
-20. [Issue Prioritization](#20-issue-prioritization)
-21. [Contributor Responsibilities](#21-contributor-responsibilities)
-22. [Accessibility Review Checklist](#22-accessibility-review-checklist)
-23. [Accessibility Roadmap](#23-accessibility-roadmap)
-24. [Known Limitations](#24-known-limitations)
-25. [Governance and Accountability](#25-governance-and-accountability)
-26. [Feedback and Communication](#26-feedback-and-communication)
-27. [External Resources](#27-external-resources)
-28. [Policy Maintenance](#28-policy-maintenance)
+19. [Issue Reporting and Remediation](#19-issue-reporting-and-remediation)
+20. [Contribution Standards](#20-contribution-standards)
+21. [Accessibility Review Checklist](#21-accessibility-review-checklist)
+22. [Accessibility Roadmap](#22-accessibility-roadmap)
+23. [Known Limitations](#23-known-limitations)
+24. [Governance and Ownership](#24-governance-and-ownership)
+25. [Policy Review and Change Control](#25-policy-review-and-change-control)
+26. [Resources and References](#26-resources-and-references)
+27. [Final Commitment](#27-final-commitment)
 
 ---
 
-## 1. Our Accessibility Commitment
+# 1. Executive Statement
 
-EveryO is committed to making machine learning development more accessible to developers, researchers, students, educators, and organizations with diverse abilities, technical backgrounds, and computing environments.
+## 1.1 Our Commitment
 
-Accessibility is an important component of software quality.
+**EveryO believes that access to machine learning technology should not be unnecessarily restricted by the design of developer tools, documentation, interfaces, or workflows.**
 
-We believe that developers should be able to understand, operate, extend, and contribute to software without encountering unnecessary barriers related to disability, assistive technology, presentation format, or interaction method.
+Accessibility is an essential dimension of software quality, alongside:
 
-Our accessibility objectives include:
+- **Correctness** — Reliable and predictable behavior.
+- **Security** — Responsible protection of systems and data.
+- **Performance** — Efficient computational execution.
+- **Maintainability** — Sustainable software engineering.
+- **Interoperability** — Compatibility with supported environments.
+- **Accessibility** — Inclusive access to functionality and information.
 
-- Supporting developers who use assistive technologies.
-- Providing understandable and structured documentation.
-- Making command-line tools predictable and readable.
-- Providing meaningful alternatives to visual information.
-- Reducing unnecessary cognitive complexity.
-- Supporting keyboard-driven development workflows.
-- Encouraging accessible third-party integrations.
-- Making errors understandable and actionable.
-- Welcoming accessibility feedback and contributions.
-- Incorporating accessibility into engineering reviews.
+Our objective is to make EveryO approachable and usable by developers, researchers, students, educators, and organizations with different abilities and technical experience.
 
-Accessibility is treated as an ongoing engineering responsibility rather than a one-time feature.
+## 1.2 Accessibility as an Engineering Responsibility
 
-This statement describes our commitments and intended practices. It does not represent a certification or independently verified accessibility conformance claim.
+Accessibility must be considered throughout the software development lifecycle.
 
----
+This includes:
 
-## 2. Purpose and Scope
+1. Requirements definition.
+2. Software architecture.
+3. API design.
+4. Documentation authoring.
+5. Feature implementation.
+6. Testing and validation.
+7. Code review.
+8. Release preparation.
+9. Maintenance and issue resolution.
 
-This policy establishes accessibility expectations for the EveryO project.
+> **Core Principle**
+>
+> *Accessibility should be designed into engineering decisions rather than added only after users encounter barriers.*
 
-It applies to project-maintained materials and interfaces, including:
+## 1.3 Intended Outcomes
 
-| Component | Accessibility Focus |
-|---|---|
-| Documentation | Structure, readability, navigation |
-| Python APIs | Naming, clarity, predictable behavior |
-| CLI tools | Text output, errors, keyboard operation |
-| Examples | Understandable and reproducible workflows |
-| Visualizations | Labels, descriptions, alternative data |
-| Benchmarks | Machine-readable and human-readable results |
-| Tutorials | Clear instructions and progressive learning |
-| GitHub workflows | Accessible contribution processes |
-| Future web interfaces | Keyboard, screen reader, responsive design |
-| Community materials | Inclusive communication and participation |
+EveryO seeks to achieve the following outcomes:
 
-### 2.1 Current Project Scope
-
-EveryO is primarily a Python machine learning and neural computing framework.
-
-Its accessibility considerations therefore differ from those of a conventional consumer-facing website.
-
-Particular attention is given to:
-
-- Terminal interaction
-- Programmatic interfaces
-- Scientific data presentation
-- Mathematical documentation
-- Diagnostic messages
-- Development workflows
-- Model evaluation results
-
-### 2.2 Future Components
-
-If EveryO introduces dashboards, interactive notebooks, hosted documentation, browser-based development tools, or graphical interfaces, those components should follow the relevant requirements described in this policy.
-
-Requirements for future components are not statements that such components currently exist.
+| Objective | Intended Outcome |
+|:---|:---|
+| Inclusive documentation | Technical information is easier to understand and navigate |
+| Accessible CLI | Essential operations are usable through text-based workflows |
+| Understandable APIs | Public interfaces are predictable and well documented |
+| Accessible visualization | Important results are not communicated exclusively through images or colors |
+| Assistive compatibility | Project-controlled interfaces accommodate relevant assistive technologies |
+| Inclusive contributions | Contributors can report barriers and propose improvements |
+| Continuous evaluation | Accessibility defects are identified, prioritized, and addressed |
 
 ---
 
-## 3. Accessibility Principles
+# 2. Document Governance
 
-EveryO follows four foundational accessibility principles.
+## 2.1 Document Information
 
-### 3.1 Perceivable
+| Attribute | Information |
+|:---|:---|
+| **Document Title** | EveryO Accessibility Policy |
+| **Document Identifier** | `EVERYO-GOV-ACCESSIBILITY-001` |
+| **Document Version** | `1.0.0` |
+| **Effective Date** | October 15, 2026 |
+| **Document Classification** | Public |
+| **Policy Status** | Active |
+| **Project** | EveryO |
+| **License** | MIT |
+| **Maintained By & Owner** | **EveryO Contributors & [@krishanth7](https://github.com/krishanth7)** |
+| **Source Repository** | [EveryO](https://github.com/krishanth7/EveryO) |
+| **Issue Tracker** | [GitHub Issues](https://github.com/krishanth7/EveryO/issues) |
+| **Review Mechanism** | Repository pull request and review process |
 
-Information should be presented in ways that users can perceive.
+## 2.2 Policy Authority
 
-Project materials should:
+This document establishes the project's published accessibility objectives and recommended engineering practices.
 
-- Provide text alternatives for meaningful images.
-- Avoid conveying information through color alone.
-- Include readable labels and descriptions.
-- Provide accessible representations of numerical results.
-- Support text-based alternatives to charts.
+It is maintained through the EveryO repository governance process.
 
-### 3.2 Operable
+**Project Maintainer:** [@krishanth7](https://github.com/krishanth7)
 
-Users should be able to operate applicable interfaces through accessible interaction methods.
+**Community Stewardship:** EveryO Contributors
 
-Project interfaces should:
+Maintainer responsibilities include:
 
-- Support keyboard interaction.
-- Avoid unnecessary pointer-only operations.
-- Preserve predictable navigation.
-- Avoid unexpected changes of context.
-- Provide clear instructions for interactive controls.
+- Reviewing proposed policy changes.
+- Evaluating accessibility issues.
+- Coordinating improvements.
+- Maintaining documentation accuracy.
+- Reviewing accessibility-related pull requests.
+- Identifying significant accessibility risks.
+- Avoiding unsupported compliance claims.
 
-### 3.3 Understandable
+## 2.3 Relationship to Other Policies
 
-Information and operations should be understandable.
+This document should be interpreted alongside:
 
-The project should:
+| Document | Purpose |
+|:---|:---|
+| [README.md](README.md) | Project overview and getting started |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution requirements |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community conduct |
+| [GOVERNANCE.md](GOVERNANCE.md) | Project decision-making |
+| [SECURITY.md](SECURITY.md) | Security reporting |
+| [SUPPORT.md](SUPPORT.md) | Support information |
+| [LICENSE](LICENSE) | Software licensing terms |
+
+---
+
+# 3. Accessibility Vision and Mission
+
+## 3.1 Vision
+
+> *To support an open machine learning ecosystem in which technical knowledge, development workflows, and computational tools are accessible to a broad and diverse community.*
+
+## 3.2 Mission
+
+EveryO aims to improve accessibility through clear documentation, predictable APIs, understandable diagnostics, accessible representations of computational results, and inclusive development practices.
+
+## 3.3 Strategic Priorities
+
+### Priority A — Accessible Information
+
+Technical information should be:
+
+- Discoverable.
+- Understandable.
+- Navigable.
+- Structured.
+- Reusable.
+- Available in appropriate nonvisual formats.
+
+### Priority B — Accessible Developer Experience
+
+Developers should be able to use essential project functionality without unnecessary dependence on visual or pointer-based interactions.
+
+### Priority C — Inclusive Community Participation
+
+The contribution process should encourage respectful feedback, accessible communication, and practical accommodation of different workflows.
+
+### Priority D — Measurable Improvement
+
+Accessibility improvements should be supported by evidence, testing, and issue tracking where feasible.
+
+---
+
+# 4. Scope and Applicability
+
+## 4.1 Covered Components
+
+This policy applies to project-controlled components and materials.
+
+| Component | Accessibility Considerations |
+|:---|:---|
+| **Python APIs** | Naming, documentation, error handling |
+| **CLI tools** | Keyboard operation, text output, diagnostics |
+| **Documentation** | Headings, links, tables, images |
+| **Examples** | Reproducibility, explanations, expected outputs |
+| **Benchmarks** | Readable results and structured data |
+| **Visualizations** | Labels, legends, text alternatives |
+| **Training utilities** | Understandable progress and errors |
+| **Model evaluation** | Clear metrics and interpretation |
+| **Community workflows** | Accessible issue and contribution processes |
+| **Future interfaces** | Applicable web and interaction standards |
+
+## 4.2 External Dependencies
+
+EveryO may rely on third-party software, including:
+
+- Python interpreters.
+- NumPy.
+- TensorFlow integrations.
+- CUDA toolchains.
+- Terminal emulators.
+- Development environments.
+- Documentation hosting services.
+
+The project cannot guarantee the accessibility of independently maintained external software.
+
+However, known accessibility barriers in project-controlled integrations should be evaluated and addressed where practical.
+
+## 4.3 Applicability of Future Requirements
+
+Requirements for dashboards, graphical controls, browser interfaces, and other potential future features apply only if those features are introduced.
+
+**A documented requirement must not be interpreted as evidence that the corresponding functionality already exists.**
+
+---
+
+# 5. Accessibility Principles
+
+EveryO follows the four foundational principles commonly summarized as **POUR**.
+
+## 5.1 Perceivable
+
+Information should be available in forms users can perceive.
+
+Engineering expectations:
+
+- Provide meaningful text alternatives.
+- Identify data with labels and units.
+- Avoid color-only communication.
+- Explain important visual results.
+- Support readable output.
+
+## 5.2 Operable
+
+Applicable interfaces should support accessible methods of interaction.
+
+Engineering expectations:
+
+- Support keyboard operation.
+- Avoid unnecessary mouse-only functionality.
+- Maintain predictable navigation.
+- Prevent keyboard traps.
+- Provide visible focus indicators where applicable.
+
+## 5.3 Understandable
+
+Information and behavior should be clear and predictable.
+
+Engineering expectations:
 
 - Use consistent terminology.
-- Explain technical requirements.
-- Document expected input formats.
-- Provide meaningful error messages.
-- Avoid unexplained abbreviations.
-- Present complex workflows in logical steps.
+- Explain prerequisites.
+- Provide actionable errors.
+- Avoid unnecessary complexity.
+- Document expected behavior.
 
-### 3.4 Robust
+## 5.4 Robust
 
-Project interfaces and content should work reliably with supported technologies.
+Interfaces and content should be compatible with supported technologies.
 
-Where applicable, this includes:
+Engineering expectations:
 
-- Semantic markup
-- Standards-based interfaces
-- Assistive technology compatibility
-- Stable output formats
-- Predictable API behavior
-- Accessible interface components
+- Use established standards.
+- Prefer semantic structures.
+- Preserve valid output formats.
+- Test relevant environments.
+- Avoid unnecessary reliance on proprietary interaction methods.
 
 ---
 
-## 4. Standards and Guidelines
+# 6. Standards and Conformance
 
-EveryO uses recognized accessibility standards as references for applicable project components.
+## 6.1 Standards Reference
 
-### 4.1 WCAG 2.2
+EveryO uses the following standards and guidance where applicable:
 
-The Web Content Accessibility Guidelines (WCAG) 2.2 provide internationally recognized accessibility requirements for web content.
+| Standard | Application |
+|:---|:---|
+| **WCAG 2.2** | Web content accessibility |
+| **WAI-ARIA** | Accessible semantics for web interfaces |
+| **ARIA Authoring Practices** | Interactive component behavior |
+| **Semantic HTML** | Structured web content |
+| **Accessible Markdown** | Repository documentation |
+| **Inclusive Design Principles** | Broader developer experience |
 
-Reference:
+## 6.2 WCAG 2.2 Level AA Target
 
-https://www.w3.org/TR/WCAG22/
+For applicable project-controlled web content and interfaces, EveryO targets **WCAG 2.2 Level AA**.
 
-For project-controlled web interfaces and web documentation, EveryO adopts **WCAG 2.2 Level AA as an accessibility target**.
+This includes relevant requirements for:
 
-This is an aspirational engineering objective.
+- Text alternatives.
+- Keyboard accessibility.
+- Focus visibility.
+- Contrast.
+- Reflow.
+- Labels and instructions.
+- Error identification.
+- Accessible names.
+- Predictable navigation.
 
-It must not be interpreted as a verified conformance claim.
+## 6.3 Conformance Status
 
-### 4.2 WAI-ARIA
+> [!WARNING]
+> **Conformance Status: Not Formally Verified**
+>
+> EveryO does not currently make a repository-wide claim of independently verified WCAG 2.2 AA conformance.
+>
+> Accessibility objectives, recommended engineering controls, and planned testing activities must not be represented as completed audits or certifications.
 
-The Accessible Rich Internet Applications specification provides semantics for interactive web components.
+## 6.4 Requirements for Verified Claims
 
-Reference:
+A future conformance statement should identify:
 
-https://www.w3.org/WAI/standards-guidelines/aria/
-
-Where applicable, developers should:
-
-- Prefer native semantic HTML.
-- Use ARIA only when necessary.
-- Provide accessible names.
-- Communicate interactive states.
-- Preserve keyboard functionality.
-- Test behavior with assistive technologies.
-
-ARIA attributes do not automatically make an interface accessible.
-
-### 4.3 Accessible Authoring Practices
-
-EveryO documentation should follow recognized accessible content-authoring principles.
-
-These include:
-
-- Descriptive headings
-- Meaningful link text
-- Logical document structure
-- Accessible tables
-- Alternative text for meaningful images
-- Clear language
-- Consistent terminology
-
-### 4.4 Standard Applicability
-
-WCAG primarily addresses web content.
-
-Python APIs, terminal applications, and machine learning computations require additional practical accessibility considerations.
-
-EveryO therefore combines applicable formal standards with project-specific engineering guidance.
+1. Evaluated product or component.
+2. Evaluated version.
+3. Applicable standard.
+4. Evaluation date.
+5. Testing methodology.
+6. Supported environments.
+7. Assistive technologies evaluated.
+8. Known exceptions.
+9. Evidence supporting the conclusion.
 
 ---
 
-## 5. Accessibility Conformance Status
+# 7. Documentation Accessibility
 
-**Current Status: Not Formally Evaluated**
+## 7.1 Documentation Structure
 
-EveryO has not established a repository-wide, independently verified accessibility conformance level through this document.
+Documentation should follow a meaningful heading hierarchy.
 
-The project does not claim:
-
-- Full WCAG 2.2 AA conformance.
-- Universal screen reader compatibility.
-- Complete accessibility across operating systems.
-- Certification by an accessibility organization.
-- Absence of accessibility defects.
-
-### 5.1 Accessibility Objectives
-
-| Area | Target |
-|---|---|
-| Project-controlled web content | WCAG 2.2 AA |
-| Documentation | Accessible Markdown and semantic structure |
-| CLI | Readable, predictable text interaction |
-| Charts | Descriptive labels and data alternatives |
-| Python APIs | Clear documentation and diagnostics |
-| Community workflows | Inclusive and accessible participation |
-| Automated testing | Progressive accessibility coverage |
-
-### 5.2 Verification Requirements
-
-A formal conformance statement should only be published after:
-
-1. Defining the evaluated product and version.
-2. Identifying the applicable accessibility standard.
-3. Establishing the tested environment.
-4. Completing automated and manual evaluations.
-5. Recording discovered barriers.
-6. Verifying required success criteria.
-7. Documenting known limitations.
-8. Publishing the evaluation date and scope.
-
----
-
-## 6. Documentation Accessibility
-
-Documentation is a primary interface for developers using EveryO.
-
-All contributors should treat documentation accessibility as a core quality requirement.
-
-### 6.1 Heading Structure
-
-Documentation should use a logical heading hierarchy.
-
-Example:
+**Recommended:**
 
 ```markdown
 # Installation
 
-## System Requirements
+## Requirements
 
-### Python Version
+### Python Requirements
 
-## Installation Steps
+## Installation Procedure
 
-### Verify Installation
+### Verification
 ```
 
-Avoid skipping heading levels solely for visual styling.
+Heading levels should not be selected solely for visual appearance.
 
-### 6.2 Meaningful Links
+## 7.2 Descriptive Links
 
-Link text should communicate the destination or purpose.
+Links should describe their purpose.
 
-Preferred:
+**Preferred:**
 
 ```markdown
-Read the [installation guide](docs/installation.md).
+[Read the installation guide](docs/installation.md)
 ```
 
-Avoid:
+**Avoid:**
 
 ```markdown
-Click [here](docs/installation.md).
+[Click here](docs/installation.md)
 ```
 
-### 6.3 Images and Diagrams
+## 7.3 Alternative Text
 
 Meaningful images should include descriptive alternative text.
 
 Example:
 
 ```markdown
-![Training loss decreases over 50 epochs while
-validation loss stabilizes after epoch 35]
+![Training and validation loss over 50 epochs,
+showing convergence after approximately 35 epochs]
 (docs/assets/training-curves.png)
 ```
 
-Complex diagrams should also provide an adjacent text explanation.
+For complex diagrams, include a separate explanation of important relationships and results.
 
-Alternative text should describe the information conveyed, not merely identify the image type.
-
-### 6.4 Tables
+## 7.4 Accessible Tables
 
 Tables should:
 
-- Include meaningful column headings.
-- Avoid unnecessarily complex layouts.
-- Use consistent units.
-- Avoid empty headers.
-- Remain understandable when read sequentially.
+- Use descriptive headers.
+- Include measurement units.
+- Follow logical reading order.
+- Avoid unnecessary complexity.
+- Remain understandable without visual styling.
 
-### 6.5 Mathematical Expressions
+## 7.5 Mathematical Documentation
 
-Mathematical documentation should provide:
+Mathematical explanations should define:
 
-- Clearly defined variables.
-- Explicit units where applicable.
-- Explanations of assumptions.
-- Worked examples.
-- Plain-language interpretations.
+- Variables.
+- Units.
+- Assumptions.
+- Input constraints.
+- Expected outputs.
+- Relevant numerical limitations.
 
-Complex formulas should not be presented only as images.
+Where practical, complex equations should include worked examples and plain-language explanations.
 
-### 6.6 Code Examples
+## 7.6 Code Documentation
 
 Code examples should:
 
 - Identify the programming language.
-- Be readable without color highlighting.
-- Use meaningful variable names.
-- Avoid unexplained shortcuts.
-- Explain expected outputs.
-- Document necessary dependencies.
-
-### 6.7 Documentation Language
-
-Documentation should use direct, professional, inclusive language.
-
-Specialized terminology is appropriate when necessary but should be defined at first use or linked to an explanation.
+- Use descriptive names.
+- Explain prerequisites.
+- Include expected results.
+- Avoid dependence on syntax highlighting.
+- Document errors where relevant.
 
 ---
 
-## 7. Command-Line Interface Accessibility
+# 8. Command-Line Accessibility
 
-EveryO provides command-line development tools.
+## 8.1 Text-First Design
 
-CLI accessibility focuses on predictable interaction, understandable output, and compatibility with text-based assistive workflows.
+Essential CLI functionality should remain understandable without:
 
-### 7.1 Text-First Interaction
+- Terminal colors.
+- Animated progress indicators.
+- Cursor movement.
+- Decorative Unicode symbols.
+- Mouse interaction.
 
-Essential CLI functionality should not depend exclusively on:
+## 8.2 Status Communication
 
-- Colors
-- Animations
-- Cursor positioning
-- Unicode symbols
-- Progress spinners
-- Interactive terminal controls
+Status should be communicated explicitly.
 
-Where practical, plain-text output should be available.
-
-### 7.2 Color Independence
-
-Color should never be the only indicator of status.
-
-Preferred:
+**Preferred:**
 
 ```text
 PASS: Model validation completed.
 WARNING: CUDA backend unavailable.
-ERROR: Invalid input shape.
+ERROR: Input tensor shape is invalid.
 ```
 
-Avoid relying exclusively on green, yellow, or red output.
+Avoid using color as the sole indicator of success, warning, or failure.
 
-### 7.3 Non-Interactive Execution
+## 8.3 Standard Output and Standard Error
 
-CLI commands should support non-interactive execution when practical.
+CLI commands should maintain clear separation between result data and diagnostics.
 
-This improves compatibility with:
+Where machine-readable output is supported:
 
-- Screen readers
-- Automated testing
-- CI pipelines
-- Remote terminals
-- Shell scripts
-- Assistive development environments
+- Standard output should contain valid result data.
+- Diagnostic messages should not corrupt structured output.
+- Errors should be clearly identified.
+- Exit codes should reflect command outcomes.
 
-### 7.4 Machine-Readable Output
+## 8.4 Non-Interactive Operation
 
-Commands that produce structured results should preserve valid machine-readable output when such formats are supported.
+Commands should support non-interactive workflows when practical.
 
-For example, a JSON output mode should not include unrelated progress messages on standard output.
+This benefits:
 
-Diagnostics may be directed to standard error.
+- Screen reader users.
+- Remote terminal users.
+- Automated scripts.
+- CI environments.
+- Accessible development tools.
 
-### 7.5 Terminal Compatibility
+## 8.5 Terminal Width and Formatting
 
-CLI output should remain understandable in environments with limited terminal capabilities.
+Output should remain understandable in narrow or minimally featured terminals.
 
-Contributors should consider:
-
-- Narrow terminal widths
-- Monochrome displays
-- Redirected output
-- Unsupported Unicode characters
-- Non-interactive sessions
-- Different operating systems
-
-### 7.6 Exit Codes
-
-CLI commands should use consistent exit codes.
-
-A successful operation should normally return zero.
-
-Failures should return nonzero exit codes and provide meaningful diagnostic information.
+Long lines, tables, and status messages should be reviewed for readability.
 
 ---
 
-## 8. Python API Accessibility
+# 9. Python API Accessibility
 
-Accessible developer APIs reduce cognitive burden and make software easier to understand and maintain.
+## 9.1 API Design Objectives
 
-### 8.1 Naming Conventions
+EveryO public APIs should prioritize:
 
-Public APIs should use descriptive and consistent names.
+**Clarity · Consistency · Predictability · Discoverability**
 
-Names should communicate their intended purpose.
+## 9.2 Naming
 
-### 8.2 Documentation
+Public functions, classes, and parameters should use meaningful and consistent names.
 
-Public APIs should document:
+## 9.3 Documentation Requirements
 
-- Purpose
-- Parameters
-- Expected types
-- Return values
-- Exceptions
-- Shape requirements
-- Device requirements
-- Practical examples
+Public API documentation should describe:
 
-### 8.3 Predictable Behavior
+| Element | Expected Documentation |
+|:---|:---|
+| Function purpose | What the operation does |
+| Parameters | Names, types, and meanings |
+| Return values | Types, shapes, and semantics |
+| Exceptions | Relevant failure conditions |
+| Constraints | Shape, dtype, and device requirements |
+| Examples | Practical usage |
+| Limitations | Important behavioral restrictions |
 
-Functions should avoid surprising behavior where reasonable.
+## 9.4 Type Information
 
-Breaking changes should be documented through the project's release and deprecation process.
+Public APIs should use type annotations where appropriate.
 
-### 8.4 Error Messages
+Type information improves code comprehension, editor support, static analysis, and accessible code navigation.
 
-API errors should explain what went wrong and, where practical, how to correct the problem.
+## 9.5 Predictable Behavior
 
-Preferred:
+APIs should avoid unnecessary hidden behavior and undocumented side effects.
+
+Breaking changes should be communicated through the project's established release process.
+
+---
+
+# 10. Data Visualization Accessibility
+
+## 10.1 Visualization Principles
+
+Visualizations should communicate important information through more than color or spatial arrangement alone.
+
+## 10.2 Required Considerations
+
+Project-maintained charts should be reviewed for:
+
+- Descriptive titles.
+- Axis labels.
+- Units.
+- Legends.
+- Contrast.
+- Distinguishable series.
+- Textual interpretation.
+- Underlying numerical data where practical.
+
+## 10.3 Training Curves
+
+Training curves should identify:
+
+- Epoch or step.
+- Training metric.
+- Validation metric.
+- Metric units.
+- Significant trends.
+- Final results.
+
+## 10.4 Confusion Matrices
+
+Confusion matrices should provide:
+
+- Class labels.
+- Numerical values.
+- Axis descriptions.
+- Normalization information.
+- A text-based interpretation.
+
+## 10.5 Benchmark Results
+
+Benchmark outputs should provide sufficient information to interpret the measurements.
+
+Example:
 
 ```text
-ValueError: Expected input tensor with shape
-(batch_size, 10), but received (32, 8).
+Benchmark: Matrix Multiplication
+Backend: NumPy
+Device: CPU
+Iterations: 100
+Mean Time: 12.4 ms
 ```
 
-Less helpful:
+*These values are illustrative and are not verified EveryO benchmark measurements.*
+
+## 10.6 Alternative Data Formats
+
+Where practical, visualization workflows should support data exports such as:
+
+- CSV.
+- JSON.
+- Plain-text tables.
+- Markdown tables.
+
+---
+
+# 11. Assistive Technology Support
+
+## 11.1 Relevant Technologies
+
+Accessibility evaluations may consider:
+
+- NVDA.
+- JAWS.
+- VoiceOver.
+- Orca.
+- Screen magnifiers.
+- Voice control.
+- Alternative keyboards.
+- High-contrast display settings.
+
+## 11.2 Compatibility Expectations
+
+Project-controlled interfaces should be designed to work with relevant assistive technologies where technically feasible.
+
+## 11.3 Verification
+
+Compatibility claims should be supported by actual testing.
+
+Testing records should identify:
+
+- Assistive technology.
+- Version.
+- Operating system.
+- Browser or terminal.
+- Tested workflow.
+- Observed result.
+
+## 11.4 External Environment Limitations
+
+Accessibility can depend on the combination of operating system, terminal, editor, browser, and assistive technology.
+
+EveryO does not guarantee compatibility with every possible configuration.
+
+---
+
+# 12. Visual and Cognitive Accessibility
+
+## 12.1 Contrast
+
+For applicable web interfaces, EveryO targets WCAG 2.2 AA contrast requirements.
+
+Common thresholds include:
+
+| Content | Target Contrast |
+|:---|:---|
+| Normal text | 4.5:1 |
+| Qualifying large text | 3:1 |
+| Relevant non-text UI components | 3:1 |
+
+Applicable exceptions are defined by WCAG.
+
+## 12.2 Text Resizing
+
+Web content should support appropriate text resizing without unnecessary loss of information or functionality.
+
+## 12.3 Reduced Motion
+
+Where animation exists, reduced-motion preferences should be respected when applicable.
+
+## 12.4 Cognitive Clarity
+
+Documentation and interfaces should:
+
+- Use consistent language.
+- Present logical steps.
+- Explain technical concepts.
+- Reduce unnecessary distractions.
+- Provide understandable feedback.
+- Support error recovery.
+
+## 12.5 Progressive Learning
+
+Beginner documentation should introduce concepts before requiring advanced technical knowledge.
+
+---
+
+# 13. Accessible Error Handling
+
+## 13.1 Error Quality
+
+Errors should answer the following questions:
+
+1. What failed?
+2. Why did it fail, if known?
+3. Which input or configuration is affected?
+4. What action can resolve the problem?
+
+## 13.2 Example
+
+**Preferred:**
+
+```text
+ValueError: Expected input tensor shape (batch_size, 10),
+but received shape (32, 8).
+
+Action: Verify the input feature dimension.
+```
+
+**Avoid:**
 
 ```text
 ValueError: Invalid input.
 ```
 
-### 8.5 Type Information
+## 13.3 Security Requirements
 
-Type annotations and documented return types should be encouraged for public APIs.
+Diagnostic messages must not unnecessarily expose:
 
-Clear type information benefits:
+- Credentials.
+- API tokens.
+- Private keys.
+- Sensitive user information.
+- Confidential configuration values.
 
-- IDE navigation
-- Static analysis
-- Code completion
-- Developer comprehension
-- Assistive coding workflows
-
-### 8.6 Discoverability
-
-Public functionality should be discoverable through consistent module organization and documentation.
+Accessibility and security requirements should be evaluated together.
 
 ---
 
-## 9. Data Visualization Accessibility
+# 14. Machine Learning Accessibility
 
-EveryO supports visualization of machine learning results.
+## 14.1 Dataset Understanding
 
-Charts and plots may communicate information that is difficult to understand without suitable alternatives.
+Examples should document:
 
-### 9.1 Text Alternatives
+- Dataset purpose.
+- Feature definitions.
+- Label meanings.
+- Input formats.
+- Known limitations.
+- Relevant assumptions.
 
-Meaningful charts should include:
+## 14.2 Training Feedback
 
-- Descriptive titles
-- Axis labels
-- Units
-- Legends where applicable
-- Explanations of important trends
-- Text summaries
+Where supported, training workflows should provide understandable information about:
 
-### 9.2 Color Accessibility
+- Progress.
+- Loss.
+- Evaluation metrics.
+- Completion status.
+- Failures.
+- Recovery options.
 
-Charts should not rely exclusively on color differences.
+## 14.3 Model Evaluation
 
-Consider:
+Evaluation results should distinguish between:
 
-- Distinct line styles
-- Markers
-- Direct labels
-- Patterns
-- Accessible contrast
-- Textual descriptions
+- Training performance.
+- Validation performance.
+- Test performance.
+- Predictions.
+- Ground-truth labels.
+- Estimated and measured results.
 
-### 9.3 Numerical Alternatives
+## 14.4 Reproducibility
 
-Where practical, visualizations should offer underlying numerical data in an accessible format.
+Examples should document relevant requirements such as:
 
-Examples include:
+- Random seeds.
+- Dependency versions.
+- Hardware assumptions.
+- Dataset sources.
+- Configuration parameters.
 
-- CSV
-- JSON
-- Plain-text tables
-- Markdown tables
+## 14.5 Responsible Interpretation
 
-### 9.4 Training Curves
-
-Training curves should identify:
-
-- Training metric
-- Validation metric
-- Epoch or step number
-- Metric units
-- Important trends
-- Final recorded values
-
-### 9.5 Confusion Matrices
-
-Confusion matrices should include:
-
-- Class labels
-- Axis descriptions
-- Numerical cell values
-- A text-based summary
-- Clarification of normalization, if used
-
-### 9.6 Performance Benchmarks
-
-Performance comparisons should provide the underlying measurements.
-
-For example:
-
-```text
-Benchmark: Matrix Multiplication
-
-Backend: NumPy
-Execution time: 12.4 ms
-Iterations: 100
-Device: CPU
-Measurement: Mean execution time
-```
-
-The values above are illustrative, not measured EveryO benchmark results.
-
-### 9.7 Exported Images
-
-Exported charts should remain understandable without requiring interpretation of color alone.
-
-When chart exports cannot embed sufficient accessible metadata, accompanying documentation or data files should provide equivalent information.
+Model accuracy and benchmark results should not be presented as guarantees of reliability in every deployment environment.
 
 ---
 
-## 10. Assistive Technology Compatibility
+# 15. Web and Interactive Interfaces
 
-EveryO aims to support workflows used with assistive technologies.
+*This section applies to project-controlled web interfaces if and when they are introduced.*
 
-Relevant technologies may include:
+## 15.1 Semantic Structure
 
-- Screen readers
-- Screen magnifiers
-- Voice control software
-- Alternative keyboards
-- High-contrast display modes
-- Text-to-speech tools
-- Accessible development environments
+Prefer native semantic HTML.
 
-### 10.1 Screen Readers
+## 15.2 Keyboard Operation
 
-Examples of screen readers include:
+Essential interactions should support keyboard use.
 
-- NVDA
-- JAWS
-- VoiceOver
-- Orca
-
-Compatibility should be evaluated against supported operating systems, terminals, browsers, and development environments.
-
-### 10.2 Compatibility Limitations
-
-The accessibility of a Python development workflow depends partly on third-party software.
-
-Examples include:
-
-- Terminal emulators
-- Integrated development environments
-- Operating systems
-- Browser rendering engines
-- Documentation hosting platforms
-
-EveryO cannot guarantee the accessibility of every external environment.
-
-Project-controlled barriers should nevertheless be addressed where feasible.
-
----
-
-## 11. Keyboard Accessibility
-
-All applicable interactive interfaces should support keyboard operation.
-
-### 11.1 General Requirements
-
-Interactive components should:
-
-- Be reachable using the keyboard.
-- Provide visible focus indicators.
-- Follow logical navigation order.
-- Avoid keyboard traps.
-- Support predictable activation.
-- Preserve focus during interface changes.
-
-### 11.2 Terminal Workflows
-
-Terminal tools should not require mouse interaction for essential operations.
-
-### 11.3 Future Graphical Interfaces
-
-Future interfaces should support:
-
-- Tab navigation
-- Shift+Tab navigation
-- Enter and Space activation
-- Escape for appropriate dismissible controls
-- Accessible keyboard shortcuts
-- Documented interaction patterns
-
-Custom widgets should follow applicable WAI-ARIA Authoring Practices.
-
----
-
-## 12. Visual Accessibility
-
-### 12.1 Color Contrast
-
-For applicable web interfaces, EveryO targets WCAG 2.2 AA contrast requirements.
-
-Common targets include:
-
-- 4.5:1 for normal text.
-- 3:1 for qualifying large text.
-- 3:1 for relevant non-text UI indicators.
-
-Applicable exceptions and definitions follow the WCAG specification.
-
-### 12.2 Text Scaling
-
-Project-controlled web content should support text resizing without unnecessary loss of information or functionality.
-
-### 12.3 Responsive Layout
-
-Web interfaces should remain usable across supported viewport sizes and zoom configurations.
-
-### 12.4 Motion and Animation
-
-Nonessential animation should be minimized.
-
-Where applicable, reduced-motion preferences should be respected.
-
-### 12.5 Visual Hierarchy
-
-Information should use consistent:
-
-- Headings
-- Spacing
-- Labels
-- Grouping
-- Typography
-- Navigation patterns
-
----
-
-## 13. Cognitive Accessibility
-
-EveryO aims to reduce unnecessary cognitive barriers in technical workflows.
-
-### 13.1 Progressive Complexity
-
-Documentation should introduce concepts progressively.
-
-Beginners should have access to introductory explanations before encountering advanced implementation details.
-
-### 13.2 Consistent Terminology
-
-The same concept should use consistent naming across documentation, APIs, examples, and diagnostic messages.
-
-### 13.3 Clear Instructions
-
-Instructions should:
-
-- State prerequisites.
-- Explain expected outcomes.
-- Present steps in logical order.
-- Identify optional operations.
-- Provide troubleshooting guidance.
-
-### 13.4 Avoiding Information Overload
-
-Long technical pages should use:
-
-- Headings
-- Navigation links
-- Short paragraphs
-- Examples
-- Tables where appropriate
-- Summaries of complex concepts
-
-### 13.5 Recoverable Errors
-
-Where practical, failed operations should provide enough information for users to recover without restarting an entire workflow.
-
----
-
-## 14. Accessible Error Handling
-
-Error messages are part of the developer experience.
-
-### 14.1 Error Message Requirements
-
-Errors should communicate:
-
-1. What failed.
-2. Why the operation failed, if known.
-3. Which input or configuration is affected.
-4. What the user can do next.
-5. Where additional documentation is available, when appropriate.
-
-### 14.2 Error Identification
-
-Errors should not depend exclusively on color or symbols.
-
-### 14.3 Error Consistency
-
-Similar failures should use consistent terminology.
-
-### 14.4 Sensitive Information
-
-Error messages must not expose:
-
-- Authentication credentials
-- Access tokens
-- Private keys
-- Sensitive configuration values
-- Unnecessary personal information
-
-Accessibility improvements must not compromise security.
-
----
-
-## 15. Machine Learning Accessibility
-
-Accessibility in machine learning extends beyond conventional interface design.
-
-### 15.1 Dataset Documentation
-
-Examples and tutorials should explain:
-
-- Dataset purpose
-- Data format
-- Feature definitions
-- Label meanings
-- Relevant limitations
-- Known assumptions
-
-### 15.2 Model Evaluation
-
-Evaluation results should include understandable metrics and sufficient context.
-
-Users should not be required to interpret a chart to understand whether a model improved or degraded.
-
-### 15.3 Training Feedback
-
-Training workflows should provide readable progress information where supported.
-
-Useful information may include:
-
-- Epoch
-- Loss
-- Accuracy
-- Validation metrics
-- Completion status
-- Error conditions
-
-### 15.4 Numerical Clarity
-
-Documentation should distinguish between:
-
-- Percentages and proportions
-- Counts and rates
-- Training and validation metrics
-- Estimated and measured results
-- Model predictions and verified outcomes
-
-### 15.5 Reproducibility
-
-Examples should document relevant reproducibility requirements, such as:
-
-- Random seeds
-- Dependency versions
-- Dataset sources
-- Hardware assumptions
-- Configuration settings
-
-### 15.6 Responsible Interpretation
-
-Documentation should avoid presenting model accuracy as a guarantee of real-world reliability.
-
-Performance claims should identify their evaluation context.
-
----
-
-## 16. Web Interface Accessibility
-
-This section applies to future project-controlled web interfaces and documentation sites.
-
-### 16.1 Semantic HTML
-
-Developers should prefer semantic HTML elements such as:
-
-```html
-<header>
-  <nav aria-label="Primary navigation">
-    <!-- Navigation links -->
-  </nav>
-</header>
-
-<main id="main-content">
-  <h1>EveryO Documentation</h1>
-</main>
-
-<footer>
-  <!-- Footer content -->
-</footer>
-```
-
-### 16.2 Accessible Forms
+## 15.3 Accessible Forms
 
 Forms should include:
 
-- Visible labels
-- Programmatic label associations
-- Clear validation messages
-- Required-field identification
-- Accessible error descriptions
+- Visible labels.
+- Programmatic label associations.
+- Clear instructions.
+- Accessible validation feedback.
+- Understandable error messages.
 
-### 16.3 Focus Management
+## 15.4 Focus Management
 
-Dynamic interfaces should manage focus appropriately when dialogs, menus, or other interactive components appear or disappear.
+Focus should remain predictable during navigation and dynamic interface updates.
 
-### 16.4 Status Announcements
+## 15.5 Responsive Design
 
-Important dynamic updates should be communicated to assistive technologies where necessary.
+Interfaces should accommodate supported screen sizes, zoom settings, and reflow requirements.
 
-### 16.5 Accessible Navigation
+## 15.6 Accessible Names
 
-Navigation should remain consistent and understandable.
+Interactive controls should have meaningful accessible names.
 
-### 16.6 Native Controls
+## 15.7 ARIA Usage
 
-Native HTML controls should be preferred when they provide the required functionality.
-
-Custom components should only be introduced when their accessibility behavior can be implemented and tested appropriately.
+ARIA should supplement appropriate semantics rather than replace native functionality unnecessarily.
 
 ---
 
-## 17. Accessibility Testing
+# 16. Accessibility Engineering Requirements
 
-Accessibility should be evaluated using multiple testing methods.
+## 16.1 Design Review
 
-Automated testing alone is insufficient to establish complete accessibility.
+Accessibility implications should be considered during feature planning.
 
-### 17.1 Documentation Testing
+## 16.2 Implementation Review
 
-Documentation reviews should examine:
+Contributors should evaluate relevant accessibility requirements before submitting changes.
 
-- Heading hierarchy
-- Alternative text
-- Link descriptions
-- Table structure
-- Language clarity
-- Code readability
-- Keyboard navigation where applicable
+## 16.3 Regression Prevention
 
-### 17.2 CLI Testing
+Confirmed accessibility defects should receive regression tests where practical.
 
-CLI accessibility reviews should consider:
+## 16.4 Documentation Updates
 
-- Plain-text readability
-- Monochrome output
-- Redirected output
-- Machine-readable output validity
-- Error messages
-- Non-interactive execution
-- Terminal compatibility
+Behavior changes affecting accessibility should be reflected in relevant documentation.
 
-### 17.3 Visualization Testing
+## 16.5 Compatibility Considerations
 
-Chart reviews should examine:
+Developers should consider supported environments and avoid introducing unnecessary barriers.
 
-- Titles
-- Axis labels
-- Units
-- Legends
-- Contrast
-- Non-color differentiation
-- Numerical alternatives
+## 16.6 Evidence-Based Claims
 
-### 17.4 Assistive Technology Testing
+Engineering documentation must distinguish between:
 
-Where resources permit, applicable interfaces should be tested with representative assistive technologies.
-
-### 17.5 Manual Testing
-
-Manual reviews should assess actual usability rather than relying exclusively on automated reports.
-
-### 17.6 Testing Evidence
-
-Accessibility testing records should identify:
-
-- Component or page tested
-- Software version
-- Test date
-- Operating system
-- Browser or terminal
-- Assistive technology, if used
-- Findings
-- Remediation status
+- Implemented features.
+- Tested features.
+- Planned improvements.
+- Known limitations.
+- Unverified assumptions.
 
 ---
 
-## 18. Continuous Integration
+# 17. Testing and Quality Assurance
 
-Accessibility checks should be integrated into the development lifecycle where practical.
+## 17.1 Testing Strategy
 
-### 18.1 Automated Checks
+Accessibility testing should combine automated checks and manual evaluation.
 
-Potential checks include:
+## 17.2 Documentation Testing
 
-- Markdown linting
-- Link validation
-- Documentation structure checks
-- HTML accessibility analysis
-- CLI output regression tests
-- Structured output validation
+Review:
 
-### 18.2 CI Scope
+- Heading hierarchy.
+- Link descriptions.
+- Alternative text.
+- Table structure.
+- Code readability.
+- Mathematical explanations.
 
-Accessibility automation should only be described as implemented after corresponding workflows have been added and verified.
+## 17.3 CLI Testing
 
-### 18.3 Regression Prevention
+Review:
 
-Confirmed accessibility defects should receive regression tests where technically feasible.
+- Plain-text output.
+- Monochrome output.
+- Redirected output.
+- Exit codes.
+- Structured output.
+- Error clarity.
+- Non-interactive behavior.
 
-### 18.4 Pull Request Validation
+## 17.4 Visualization Testing
 
-Pull requests affecting documentation, visualizations, or interfaces should be reviewed for relevant accessibility impacts.
+Review:
+
+- Labels.
+- Legends.
+- Units.
+- Color dependence.
+- Text alternatives.
+- Numerical data availability.
+
+## 17.5 Assistive Technology Testing
+
+Where resources permit, representative workflows should be evaluated using assistive technologies.
+
+## 17.6 Test Records
+
+Testing evidence should include:
+
+| Field | Description |
+|:---|:---|
+| Component | Tested functionality |
+| Version | Software version |
+| Date | Evaluation date |
+| Environment | OS, browser, terminal |
+| Technology | Assistive technology, if used |
+| Result | Observed behavior |
+| Findings | Identified barriers |
+| Status | Open, resolved, or deferred |
 
 ---
 
-## 19. Reporting Accessibility Issues
+# 18. Continuous Integration
 
-Accessibility barriers may be reported through the EveryO GitHub issue tracker.
+## 18.1 Automation Objectives
 
-**Issue Tracker:**
+Where appropriate, CI may include:
 
-https://github.com/krishanth7/EveryO/issues
+- Markdown linting.
+- Link checking.
+- Documentation structure checks.
+- HTML accessibility analysis.
+- CLI output regression tests.
+- Structured data validation.
 
-### 19.1 Recommended Report Format
+## 18.2 Validation Integrity
+
+Automated accessibility checks should only be reported as implemented after corresponding workflows have been added and successfully executed.
+
+## 18.3 Manual Review
+
+Automated checks do not replace manual usability or assistive technology testing.
+
+## 18.4 Pull Request Quality Gates
+
+Accessibility-related changes should be reviewed for regressions before merging, consistent with project governance.
+
+---
+
+# 19. Issue Reporting and Remediation
+
+## 19.1 Reporting Channel
+
+Accessibility issues may be reported through:
+
+**[EveryO GitHub Issues](https://github.com/krishanth7/EveryO/issues)**
+
+## 19.2 Issue Template
 
 ```markdown
-## Accessibility Issue
+## Accessibility Issue Report
 
 ### Summary
 Describe the accessibility barrier.
 
 ### Affected Component
-Identify the documentation page, CLI command,
-visualization, or other affected component.
+Identify the affected file, command, page, or workflow.
 
 ### Environment
-- Operating system:
 - EveryO version:
+- Operating system:
 - Python version:
-- Terminal or browser:
+- Browser or terminal:
 - Assistive technology, if applicable:
 
 ### Steps to Reproduce
@@ -1042,387 +985,437 @@ visualization, or other affected component.
 2.
 3.
 
-### Expected Accessible Behavior
-Describe the expected result.
+### Expected Behavior
+Describe the accessible outcome.
 
 ### Actual Behavior
-Describe what occurred.
+Describe the observed barrier.
 
-### Impact
-Explain how the barrier affects use.
+### User Impact
+Explain how the issue affects functionality.
 
 ### Suggested Improvement
 Optional.
 
-### Additional Context
-Optional screenshots, logs, or references.
+### Additional Information
+Optional logs, screenshots, or references.
 ```
 
-### 19.2 Privacy
+## 19.3 Severity Classification
 
-Reporters should avoid publishing personal or sensitive information in public issues.
+| Priority | Classification | Description |
+|:---|:---|:---|
+| **P0** | Critical | Essential functionality inaccessible without a reasonable alternative |
+| **P1** | High | Significant barrier to a primary workflow |
+| **P2** | Medium | Accessibility defect with a workaround |
+| **P3** | Low | Minor issue with limited functional impact |
 
-### 19.3 Security-Related Findings
-
-Security vulnerabilities should follow the project's security reporting process in [SECURITY.md](SECURITY.md).
-
----
-
-## 20. Issue Prioritization
-
-Accessibility issues should be prioritized according to their impact.
-
-| Priority | Description |
-|---|---|
-| Critical | Essential functionality is inaccessible with no reasonable alternative |
-| High | Significant barrier to a primary workflow |
-| Medium | Accessibility issue with an available workaround |
-| Low | Minor issue with limited functional impact |
-
-### 20.1 Prioritization Factors
+## 19.4 Prioritization Factors
 
 Maintainers should consider:
 
-- User impact
-- Workflow importance
-- Availability of alternatives
-- Severity
-- Regression risk
-- Scope of affected components
-- Implementation complexity
+- Severity.
+- User impact.
+- Availability of alternatives.
+- Scope.
+- Regression risk.
+- Implementation complexity.
 
-### 20.2 Resolution Expectations
+## 19.5 Security-Related Reports
 
-Maintainers should evaluate accessibility reports and communicate progress when reasonably possible.
+Security vulnerabilities must follow [SECURITY.md](SECURITY.md).
 
-No fixed response or resolution time is guaranteed by this policy.
+Sensitive information should not be posted publicly.
 
 ---
 
-## 21. Contributor Responsibilities
+# 20. Contribution Standards
 
-Accessibility is a shared responsibility.
+## 20.1 Shared Responsibility
 
-### 21.1 Code Contributors
+Accessibility is a responsibility shared by project maintainers, contributors, reviewers, and documentation authors.
 
-Code contributors should:
+## 20.2 Code Contributions
 
-- Use clear public API names.
-- Provide understandable diagnostics.
-- Avoid unnecessary interaction barriers.
-- Document relevant behavior.
-- Add tests for accessibility-related fixes.
+Contributors should:
 
-### 21.2 Documentation Contributors
+- Use understandable names.
+- Provide actionable errors.
+- Document public behavior.
+- Consider accessible workflows.
+- Add relevant tests.
 
-Documentation contributors should:
+## 20.3 Documentation Contributions
 
-- Maintain logical heading structure.
-- Provide meaningful alternative text.
+Contributors should:
+
+- Use meaningful headings.
+- Provide image descriptions.
+- Explain mathematical notation.
 - Use descriptive links.
-- Explain technical concepts.
-- Review mathematical readability.
+- Maintain consistent terminology.
 
-### 21.3 Visualization Contributors
+## 20.4 Visualization Contributions
 
-Visualization contributors should:
+Contributors should:
 
-- Label axes and units.
+- Include titles and labels.
+- Identify units.
 - Avoid color-only distinctions.
 - Provide numerical alternatives where practical.
-- Explain important chart findings.
 
-### 21.4 Reviewers
+## 20.5 Reviewer Responsibilities
 
-Reviewers should assess accessibility impacts alongside correctness, maintainability, performance, and security.
-
-### 21.5 Maintainers
-
-Maintainers should:
-
-- Review reported barriers.
-- Prioritize significant accessibility defects.
-- Encourage inclusive contributions.
-- Maintain this policy.
-- Avoid unsupported compliance claims.
+Reviewers should consider accessibility alongside correctness, maintainability, security, and performance.
 
 ---
 
-## 22. Accessibility Review Checklist
+# 21. Accessibility Review Checklist
 
-The following checklist may be used during pull request reviews.
+<details>
+<summary><strong>Documentation Accessibility Checklist</strong></summary>
 
-### Documentation
+- [ ] Logical heading hierarchy.
+- [ ] Meaningful link text.
+- [ ] Alternative text for meaningful images.
+- [ ] Understandable tables.
+- [ ] Readable code examples.
+- [ ] Defined mathematical variables.
+- [ ] Clear prerequisites.
+- [ ] Consistent terminology.
 
-- [ ] Headings follow a logical hierarchy.
-- [ ] Links have meaningful descriptions.
-- [ ] Meaningful images include alternative text.
-- [ ] Tables have understandable headings.
-- [ ] Code examples are readable without syntax colors.
-- [ ] Mathematical variables are explained.
-- [ ] Instructions identify required prerequisites.
+</details>
 
-### CLI and Developer Tools
+<details>
+<summary><strong>CLI Accessibility Checklist</strong></summary>
 
-- [ ] Essential information is available as text.
-- [ ] Output does not depend on color alone.
-- [ ] Error messages are actionable.
-- [ ] Exit codes are appropriate.
-- [ ] Structured output remains machine-readable.
-- [ ] Non-interactive workflows are supported where practical.
+- [ ] Essential information available as text.
+- [ ] No color-only status communication.
+- [ ] Actionable error messages.
+- [ ] Appropriate exit codes.
+- [ ] Valid structured output.
+- [ ] Non-interactive operation where practical.
+- [ ] Readable output in limited terminals.
 
-### Visualizations
+</details>
 
-- [ ] Charts have meaningful titles.
-- [ ] Axes and units are labeled.
-- [ ] Legends are understandable.
-- [ ] Information is not conveyed only by color.
-- [ ] Numerical alternatives are available where practical.
+<details>
+<summary><strong>Visualization Accessibility Checklist</strong></summary>
 
-### Web Interfaces, If Applicable
+- [ ] Descriptive chart title.
+- [ ] Axis labels.
+- [ ] Measurement units.
+- [ ] Understandable legends.
+- [ ] Non-color distinctions.
+- [ ] Textual interpretation.
+- [ ] Numerical alternatives where practical.
 
-- [ ] Interactive elements support keyboard use.
-- [ ] Focus indicators are visible.
-- [ ] Form controls have accessible labels.
-- [ ] Contrast meets applicable targets.
-- [ ] Content supports appropriate zoom and reflow.
-- [ ] Dynamic updates are communicated appropriately.
-- [ ] Assistive technology testing has been considered.
+</details>
 
-### Review and Verification
+<details>
+<summary><strong>Web Accessibility Checklist — If Applicable</strong></summary>
 
-- [ ] Accessibility impacts have been evaluated.
-- [ ] Known limitations are documented.
-- [ ] Relevant tests have been completed.
-- [ ] No unsupported conformance claims are introduced.
+- [ ] Keyboard navigation.
+- [ ] Visible focus.
+- [ ] Accessible names.
+- [ ] Appropriate contrast.
+- [ ] Accessible forms.
+- [ ] Responsive reflow.
+- [ ] Appropriate focus management.
+- [ ] Assistive technology evaluation.
+
+</details>
+
+<details>
+<summary><strong>Quality Assurance Checklist</strong></summary>
+
+- [ ] Accessibility impact reviewed.
+- [ ] Relevant tests completed.
+- [ ] Known limitations documented.
+- [ ] Regression risks evaluated.
+- [ ] Documentation updated.
+- [ ] No unsupported conformance claims.
+
+</details>
 
 ---
 
-## 23. Accessibility Roadmap
+# 22. Accessibility Roadmap
 
-This roadmap describes proposed improvements rather than completed or scheduled commitments.
+> [!NOTE]
+> The following roadmap describes proposed improvement areas.
+> It does not establish completion status, funding, deadlines, or release commitments.
 
-### Phase 1 — Documentation Foundations
+## Phase 1 — Documentation Foundations
 
-Objectives:
+**Objectives:**
 
 - Review README accessibility.
 - Standardize documentation structure.
-- Improve image alternative text.
-- Review links and tables.
-- Establish accessibility contribution guidance.
+- Improve alternative text.
+- Review tables and links.
+- Establish documentation review guidance.
 
-### Phase 2 — CLI Accessibility
+**Success Criteria:**
 
-Objectives:
+- Documented review findings.
+- Identified barriers tracked.
+- Approved improvements merged.
 
-- Review terminal output readability.
-- Evaluate non-color status indicators.
-- Improve error messages.
+## Phase 2 — CLI Accessibility
+
+**Objectives:**
+
+- Review terminal output.
+- Improve diagnostic clarity.
+- Evaluate color independence.
 - Test redirected output.
-- Review machine-readable output behavior.
+- Review structured output behavior.
 
-### Phase 3 — Visualization Accessibility
+**Success Criteria:**
 
-Objectives:
+- Important barriers documented.
+- Regression tests added where practical.
+- Improvements validated.
 
-- Audit chart labels.
-- Review color dependence.
-- Improve explanatory captions.
-- Evaluate structured numerical exports.
-- Document accessible visualization examples.
+## Phase 3 — Visualization Accessibility
 
-### Phase 4 — Automated Validation
+**Objectives:**
 
-Objectives:
+- Review chart labels.
+- Improve non-color distinctions.
+- Provide explanatory summaries.
+- Evaluate numerical exports.
+- Document accessible examples.
 
-- Introduce appropriate documentation checks.
-- Add regression tests.
-- Integrate suitable checks into CI.
-- Document testing environments.
-- Establish review evidence requirements.
+**Success Criteria:**
 
-### Phase 5 — Extended Compatibility
+- Relevant visualizations reviewed.
+- Identified barriers addressed or documented.
+- Accessible examples available where practical.
 
-Objectives:
+## Phase 4 — Automated Validation
+
+**Objectives:**
+
+- Evaluate documentation linting.
+- Introduce relevant accessibility checks.
+- Improve regression coverage.
+- Record testing evidence.
+- Integrate checks into development workflows.
+
+**Success Criteria:**
+
+- Selected checks operational.
+- Results visible to maintainers.
+- Failures documented and actionable.
+
+## Phase 5 — Extended Evaluation
+
+**Objectives:**
 
 - Conduct representative assistive technology testing.
-- Review community feedback.
+- Review user feedback.
 - Evaluate future interfaces.
-- Address identified barriers.
-- Publish verified accessibility findings.
+- Improve accessibility documentation.
+- Publish verified findings where appropriate.
+
+**Success Criteria:**
+
+- Evaluation scope documented.
+- Findings recorded.
+- Remediation priorities established.
 
 ---
 
-## 24. Known Limitations
+# 23. Known Limitations
 
-EveryO recognizes that accessibility may vary across components and environments.
+## 23.1 Current Verification Limitations
 
-### 24.1 Terminal Environments
+A complete accessibility audit has not been established by this document.
 
-Terminal accessibility depends partly on the terminal emulator, operating system, and assistive technology.
+## 23.2 Terminal Dependencies
 
-### 24.2 Scientific Visualizations
+Accessibility depends partly on terminal emulators, operating systems, and assistive technologies.
 
-Some complex scientific charts may require additional textual explanations or data exports to communicate their full meaning.
+## 23.3 Scientific Visualization
 
-### 24.3 External Dependencies
+Complex charts may require additional explanations or alternative data representations.
 
-EveryO does not control the accessibility of all third-party libraries, development environments, or external tools.
+## 23.4 Third-Party Software
 
-### 24.4 Future Interfaces
+External dependencies may have accessibility limitations outside EveryO's direct control.
 
-Future graphical interfaces may introduce additional accessibility requirements.
+## 23.5 Future Functionality
 
-### 24.5 Verification Status
+Future interfaces may require additional testing, standards, and documentation.
 
-This policy does not establish that every described accessibility practice has already been implemented or tested.
+## 23.6 Transparency Requirement
 
-Confirmed component-specific limitations should be documented through relevant issues or evaluation reports.
-
----
-
-## 25. Governance and Accountability
-
-Accessibility should be considered within the project's existing governance processes.
-
-### 25.1 Ownership
-
-Project maintainers are responsible for reviewing accessibility-related changes and reports within their areas of responsibility.
-
-### 25.2 Decision-Making
-
-Accessibility improvements should be evaluated alongside:
-
-- Correctness
-- Security
-- Performance
-- Maintainability
-- Compatibility
-- Developer experience
-
-### 25.3 Transparency
-
-Maintainers should avoid presenting planned improvements as completed implementations.
-
-### 25.4 Community Participation
-
-Community members are encouraged to propose improvements, review documentation, report barriers, and contribute fixes.
+Project documentation should not claim that an accessibility issue is resolved until the corresponding improvement has been verified.
 
 ---
 
-## 26. Feedback and Communication
+# 24. Governance and Ownership
 
-EveryO welcomes feedback about accessibility.
+## 24.1 Maintained By & Owner
 
-Feedback may concern:
+<div align="center">
 
-- Documentation
-- Command-line tools
-- API usability
-- Visualization outputs
-- Developer onboarding
-- Assistive technology compatibility
-- Contribution workflows
+### EveryO Accessibility Governance
 
-**GitHub Issues:**
+**Maintained By & Owner**
 
-https://github.com/krishanth7/EveryO/issues
+### **EveryO Contributors & [@krishanth7](https://github.com/krishanth7)**
 
-**Contribution Guidelines:**
+*Project Maintenance · Community Stewardship · Accessibility Oversight*
 
-[CONTRIBUTING.md](CONTRIBUTING.md)
+</div>
 
-**Community Standards:**
+The EveryO accessibility policy is maintained through the project's collaborative open-source governance process.
 
-[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+**[@krishanth7](https://github.com/krishanth7)** serves as the named repository maintainer for the purposes of this document.
 
-When reporting a barrier, contributors are encouraged to describe the affected workflow and desired accessible outcome.
+**EveryO Contributors** participate through contributions, reviews, issue reports, documentation improvements, and other activities consistent with the repository's governance rules.
 
-Disclosure of a disability or medical condition is not required.
+This designation identifies project stewardship and does not independently establish legal ownership or transfer copyright.
 
----
+## 24.2 Responsibility Matrix
 
-## 27. External Resources
+| Responsibility | Accountable Role |
+|:---|:---|
+| Policy maintenance | Project maintainer |
+| Accessibility issue triage | Maintainers |
+| Documentation improvements | Maintainers and contributors |
+| Accessibility testing | Assigned contributors and reviewers |
+| Pull request review | Authorized reviewers |
+| Remediation prioritization | Maintainers |
+| Policy revisions | Project governance process |
+| Community feedback | EveryO community |
 
-The following resources provide additional accessibility guidance.
+## 24.3 Governance Principles
 
-### W3C Web Accessibility Initiative
+Accessibility governance should emphasize:
 
-https://www.w3.org/WAI/
+- **Transparency** — Accurate reporting of progress.
+- **Accountability** — Clear responsibility for decisions.
+- **Inclusivity** — Respectful community participation.
+- **Evidence** — Verification of technical claims.
+- **Sustainability** — Maintainable improvements.
+- **Continuous Improvement** — Ongoing evaluation and refinement.
 
-### WCAG 2.2
+## 24.4 Policy Changes
 
-https://www.w3.org/TR/WCAG22/
+Changes to this document should follow the established repository contribution and review process.
 
-### WAI-ARIA
+Significant changes should explain:
 
-https://www.w3.org/WAI/standards-guidelines/aria/
-
-### ARIA Authoring Practices Guide
-
-https://www.w3.org/WAI/ARIA/apg/
-
-### WebAIM
-
-https://webaim.org/
-
-### Accessible Rich Internet Applications Specification
-
-https://www.w3.org/TR/wai-aria-1.2/
-
-### Python Accessibility Resources
-
-https://www.python.org/
-
-External resources are provided for reference and do not constitute endorsement or certification of EveryO.
+1. The reason for the change.
+2. The affected accessibility requirements.
+3. The expected impact.
+4. Any compatibility considerations.
+5. Relevant supporting references.
 
 ---
 
-## 28. Policy Maintenance
+# 25. Policy Review and Change Control
 
-This document should be reviewed periodically and whenever significant accessibility-related changes are introduced.
+## 25.1 Review Triggers
 
-Updates may be appropriate when:
+This policy should be reviewed when:
 
 - New interfaces are introduced.
-- Accessibility standards change.
-- Important barriers are identified.
-- Testing practices improve.
-- Community feedback identifies gaps.
-- Project governance requirements evolve.
+- Significant accessibility issues are reported.
+- Relevant standards change.
+- Testing practices evolve.
+- Governance responsibilities change.
+- Community feedback identifies important gaps.
 
-Changes should follow the project's established contribution and review procedures.
+## 25.2 Versioning
 
-### Document Control
+Policy revisions may use semantic-style document version identifiers.
 
-| Field | Value |
-|---|---|
-| Document | ACCESSIBILITY.md |
-| Project | EveryO |
-| Version | 1.0 |
-| Status | Active |
-| Maintainer | EveryO Contributors |
-| Review Method | Repository contribution process |
-| License | MIT |
-| Last Updated | October 2026 |
+For example:
 
----
+| Version | Meaning |
+|:---|:---|
+| `1.0.0` | Initial published policy |
+| `1.0.1` | Editorial clarification |
+| `1.1.0` | Additional guidance |
+| `2.0.0` | Major policy restructuring |
 
-## Closing Statement
+These are document-versioning conventions, not software release guarantees.
 
-Accessibility is not an optional enhancement to software quality.
+## 25.3 Change Approval
 
-EveryO aims to make machine learning development more understandable, inclusive, and approachable through accessible documentation, predictable developer tools, meaningful diagnostics, and responsible engineering practices.
+Policy updates should be reviewed and merged by authorized repository maintainers.
 
-We recognize that accessibility requires continuous evaluation, community participation, and improvements informed by real user experiences.
+## 25.4 Change History
 
-**Our commitment is to identify barriers, respond constructively, and improve the accessibility of EveryO over time.**
+| Version | Date | Description |
+|:---|:---|:---|
+| 1.0.0 | 2026-10-15 | Initial comprehensive accessibility policy |
 
 ---
 
-**EveryO — Open Machine Learning. Accessible Development.**
+# 26. Resources and References
 
-Copyright © 2026 EveryO Contributors.
+## Official Accessibility Standards
 
-This document is distributed as part of the EveryO project under the [MIT License](LICENSE).
+| Resource | Reference |
+|:---|:---|
+| W3C Web Accessibility Initiative | https://www.w3.org/WAI/ |
+| WCAG 2.2 | https://www.w3.org/TR/WCAG22/ |
+| WAI-ARIA | https://www.w3.org/TR/wai-aria-1.2/ |
+| ARIA Authoring Practices | https://www.w3.org/WAI/ARIA/apg/ |
+| WebAIM | https://webaim.org/ |
+
+## EveryO Project Resources
+
+| Resource | Link |
+|:---|:---|
+| Repository | [EveryO](https://github.com/krishanth7/EveryO) |
+| Issues | [Report an Issue](https://github.com/krishanth7/EveryO/issues) |
+| Pull Requests | [Contribute Changes](https://github.com/krishanth7/EveryO/pulls) |
+| Contribution Guidelines | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Security Policy | [SECURITY.md](SECURITY.md) |
+| Governance | [GOVERNANCE.md](GOVERNANCE.md) |
+| License | [LICENSE](LICENSE) |
+
+---
+
+# 27. Final Commitment
+
+> [!IMPORTANT]
+> ### Our Accessibility Promise
+>
+> **EveryO is committed to improving the accessibility of its machine learning development ecosystem through responsible engineering, inclusive documentation, transparent governance, and continuous evaluation.**
+>
+> We recognize that accessibility is an ongoing process requiring technical investment, user feedback, testing, and thoughtful collaboration.
+>
+> We aim to identify barriers, prioritize meaningful improvements, and communicate limitations accurately.
+
+Accessibility is a shared responsibility across the project lifecycle.
+
+Every contribution that improves clarity, usability, or inclusive access helps strengthen the EveryO ecosystem.
+
+---
+
+<div align="center">
+
+### **EveryO**
+
+**Open Machine Learning. Accessible Development.**
+
+*Built for developers. Improved by contributors. Designed for broader access.*
+
+---
+
+**Maintained By & Owner**  
+**EveryO Contributors & [@krishanth7](https://github.com/krishanth7)**
+
+**[Repository](https://github.com/krishanth7/EveryO)** · **[Contribute](CONTRIBUTING.md)** · **[Report an Issue](https://github.com/krishanth7/EveryO/issues)** · **[MIT License](LICENSE)**
+
+<sub>Copyright © 2026 EveryO Contributors. Licensed under the MIT License.</sub>
+
+</div>
