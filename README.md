@@ -8,6 +8,7 @@
 are written from scratch on NumPy — then accelerated with optional CUDA kernels and cross-checked against TensorFlow.<br>
 Designed for readable implementations, reproducible experiments, and explicit validation.</p>
 
+[![version](https://img.shields.io/github/v/tag/krishanth7/EveryO?label=version&color=2a78d6)](https://github.com/krishanth7/EveryO/releases)
 [![tests](https://github.com/krishanth7/EveryO/actions/workflows/tests.yml/badge.svg)](https://github.com/krishanth7/EveryO/actions/workflows/tests.yml)
 [![CUDA build](https://github.com/krishanth7/EveryO/actions/workflows/cuda-build.yml/badge.svg)](https://github.com/krishanth7/EveryO/actions/workflows/cuda-build.yml)
 [![Python](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11%20|%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -16,7 +17,7 @@ Designed for readable implementations, reproducible experiments, and explicit va
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-eb6834)](CONTRIBUTING.md)
 [![Stars](https://img.shields.io/github/stars/krishanth7/EveryO?style=flat&color=eda100)](https://github.com/krishanth7/EveryO/stargazers)
 
-**[What is EveryO?](#what-is-everyo) · [Quick start](#-quick-start-60-seconds) · [What it does](#-what-it-actually-does) · [Results](#-results-from-a-real-run) · [Architecture](#-architecture) · [Roadmap](#-roadmap) · [Contribute](#-contributing) · [Governance](#-governance-and-project-policies)**
+**[What is EveryO?](#what-is-everyo) · [What you would use it for](#what-you-would-use-it-for) · [Quick start](#-quick-start-60-seconds) · [Capabilities](#-what-it-actually-does) · [Results](#-results-from-a-real-run) · [Correctness](#-correctness-is-the-feature) · [Architecture](#-architecture) · [Roadmap](#-roadmap--all-shipped) · [Contribute](#-contributing) · [Governance](#-governance-and-project-policies)**
 
 </div>
 
@@ -24,32 +25,49 @@ Designed for readable implementations, reproducible experiments, and explicit va
 
 ## What is EveryO?
 
-EveryO is a **neural network framework written from scratch in Python**. Tensors, reverse-mode
-automatic differentiation, layers, optimizers, the training loop, serialization — all of it is
-implemented here, on top of NumPy. It is not a wrapper around PyTorch, TensorFlow or JAX, and it
-does not call out to one at runtime.
+EveryO is a **neural network framework written from scratch in Python** for learning,
+teaching, and small-scale experiments. Its NumPy core implements tensors, automatic
+differentiation, layers, optimizers, and training. Optional integrations provide CUDA
+operations, TensorFlow reference checks, and ONNX export.
 
 The implementation is organized around tensors, automatic differentiation, neural-network
 modules, optimization, and training. Start with `loss.backward()` and follow the graph
 traversal and individual gradient implementations directly in the source.
 
-Legibility is worthless without correctness, so every differentiable operation is checked against
-central finite differences, and the numerical results are checked against TensorFlow. Where the two
-disagree, the README says by how much.
+### At a glance
 
-```
-BUILD  →  TRAIN  →  MEASURE  →  UNDERSTAND  →  ACCELERATE
-```
+| Area | Scope |
+|---|---|
+| Core | Tensors, autograd, neural networks, optimizers, training, and serialization |
+| Additional tools | ONNX exporters, dynamic int8 quantization, profiling, and data-parallel training |
+| Platforms | Python 3.9–3.12 on Linux, macOS, and Windows for the CPU workflow |
+| Optional components | CUDA, TensorFlow reference checks, ONNX, and Plotly dashboards |
+| Runtime | Core workflows run locally without accounts, API keys, or telemetry |
+| Validation limits | See [what was verified](#what-implemented-means-for-each-one), including GPU and multi-machine limitations |
+| License | MIT |
 
-### Who it is for
+### What you would use it for
 
-- **People learning how deep learning actually works** — you can read the derivative of every
-  operation you use, not just call it.
-- **Engineers who need to verify a result** — a small, deterministic, dependency-light reference
-  you can step through in a debugger.
-- **Teachers and students** — core workflows need no accounts or API keys. Installation
-  downloads Python dependencies; bundled examples generate data locally and can run offline
-  once their dependencies are installed.
+- **Learning the implementation:** follow gradients in [autograd.py](everyo/core/autograd.py),
+  tensor storage in [tensor.py](everyo/core/tensor.py), convolution in
+  [convolution.py](everyo/core/convolution.py), and updates in [adam.py](everyo/optim/adam.py).
+- **Checking numerical results:** inspect the finite-difference tests and optional
+  TensorFlow comparisons, including [convolution tests](tests/test_conv.py).
+- **Teaching and coursework:** bundled examples generate data locally and can run offline
+  once dependencies are installed. Installation may download Python packages.
+- **Small CPU experiments:** build CNNs, recurrent networks, or transformers with a readable
+  training stack. Runtime depends on model size and hardware.
+- **Exporting supported models:** use `export_onnx` or `export_onnx_traced`; review the
+  [export limitations](docs/scaling.md) before relying on the resulting graph.
+
+### When to use something else
+
+| Your situation | Direction |
+|---|---|
+| Learning, teaching, or inspecting numerical implementations | EveryO |
+| Large-scale training or optimized accelerator execution | A mature training framework such as PyTorch or JAX |
+| Production inference | Validate a supported ONNX export with your target runtime, or use a production framework |
+| A broad ecosystem of pretrained models and third-party layers | An established framework and model ecosystem |
 
 ### What it is not
 
@@ -57,7 +75,7 @@ EveryO is **not a production training runtime**. The roadmap is finished, but "i
 "battle-tested": it will not out-perform a tuned framework on a large model, its CUDA path needs a
 GPU that this project's CI does not have, and multi-node training has been exercised across
 processes rather than across machines. Those limits are stated where they apply rather than left
-for you to discover — the [Roadmap](#-roadmap) says exactly what was verified and how.
+for you to discover — the [Roadmap](#-roadmap--all-shipped) says exactly what was verified and how.
 
 ### How to trust it
 
@@ -229,7 +247,7 @@ LSTM  7.71e-06     ~560,000x larger
 > **Requires a GPU** — the CUDA paths (`eo.cuda.*`, including GPU-resident tensors) need the
 > native extension built against a real NVIDIA toolchain. Everything else on this page runs on CPU.
 > The kernels are checked against NumPy **on hardware that has a GPU**; that check skips in this
-> project's CI, which has none. See the [roadmap](#-roadmap) for exactly what is and is not verified.
+> project's CI, which has none. See the [roadmap](#-roadmap--all-shipped) for exactly what is and is not verified.
 >
 > **Still array-in, array-out** — `eo.cuda.add` and friends copy to the device and back on every call.
 > Use `eo.cuda.to_device` when you want a chain of operations to stay resident.
@@ -251,11 +269,12 @@ cross-entropy  vs TensorFlow ............. exact to 6 decimal places
 its GRADIENT   vs TensorFlow ............. 3.725e-09
 ```
 
-**709 tests** run in about 17 seconds on CPU. CUDA tests skip themselves without a GPU;
-TensorFlow tests skip themselves without TensorFlow. The core suite needs no network, no GPU, and no credentials.
+The suite includes CPU tests and optional CUDA, TensorFlow, and ONNX checks.
+Test totals and skips depend on the installed dependencies and available hardware;
+use the current CI run and your local pytest summary for results.
 
 ```bash
-pytest                    # 709 passed, 8 skipped
+python -m pytest
 ./scripts/lint.sh         # ruff check + format check
 ```
 
