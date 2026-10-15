@@ -1,21 +1,266 @@
-MIT License
 
-Copyright (c) 2026 Krishanth and the EveryO contributors
+# EveryO — Licensing Policy
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+**Project:** EveryO  
+**License:** MIT License  
+**License Identifier:** MIT  
+**Copyright:** © 2026 EveryO Contributors  
+**Repository:** https://github.com/krishanth7/EveryO
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+---
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## 1. Introduction
+
+EveryO is an open-source machine learning and neural computing
+framework developed to support experimentation, research,
+education, software engineering, and artificial intelligence
+applications.
+
+The project is distributed under the MIT License, a permissive
+open-source software license that encourages collaboration,
+innovation, modification, and redistribution.
+
+The complete and legally operative license terms are provided
+in the repository's LICENSE file.
+
+This document provides additional explanations of those terms.
+It does not replace, modify, or extend the MIT License.
+
+## 2. Scope of Licensing
+
+The MIT License applies to the original EveryO source code
+and associated documentation distributed by the project,
+except where individual files or components explicitly
+identify different applicable license terms.
+
+The license permits use in:
+
+- Personal and educational projects
+- Academic and scientific research
+- Commercial software applications
+- Enterprise software environments
+- Artificial intelligence and machine learning systems
+- Cloud computing and distributed applications
+- Modified and derivative software products
+- Proprietary and open-source software solutions
+
+Users should review applicable third-party licenses
+before redistributing dependencies or bundled components.
+
+## 3. Permissions
+
+Subject to the conditions of the MIT License, recipients
+are permitted to exercise the following rights.
+
+### 3.1 Commercial Use
+
+EveryO may be incorporated into commercial products,
+services, applications, and enterprise solutions.
+
+Commercial use does not require a separate licensing fee
+or additional permission under the MIT License.
+
+### 3.2 Modification
+
+Users may modify, extend, optimize, refactor, or otherwise
+adapt the software to meet their technical requirements.
+
+Modified versions may be distributed under different
+licensing terms, provided the original MIT copyright and
+permission notices are retained as required.
+
+### 3.3 Distribution
+
+Users may distribute original or modified copies of EveryO
+through public repositories, private repositories, software
+packages, or other distribution channels.
+
+The applicable copyright and license notices must be
+included in copies or substantial portions of the software.
+
+### 3.4 Private Use
+
+EveryO may be used, studied, modified, and deployed
+privately without an obligation under the MIT License
+to publish modifications or disclose proprietary source code.
+
+### 3.5 Sublicensing
+
+The MIT License permits sublicensing, subject to preserving
+the required original copyright and permission notices.
+
+### 3.6 Integration
+
+EveryO may be integrated into applications, libraries,
+machine learning pipelines, research tools, and other
+software systems.
+
+The MIT License does not require the entire integrating
+application to be distributed under the MIT License.
+
+## 4. License Conditions
+
+The MIT License contains a primary notice-preservation
+requirement.
+
+### 4.1 Copyright Notice
+
+The original copyright notice must be retained in copies
+or substantial portions of the software.
+
+### 4.2 Permission Notice
+
+The MIT permission notice must accompany copies or
+substantial portions of the software.
+
+### 4.3 Modified Distributions
+
+When distributing modified versions, recipients must
+continue to satisfy the original MIT License conditions.
+
+The MIT License itself does not require modified files
+to carry a separate change log or modification notice.
+
+### 4.4 Source Code Disclosure
+
+The MIT License does not require users to disclose
+modified or proprietary source code.
+
+## 5. Warranty Disclaimer
+
+EveryO is provided on an "AS IS" basis.
+
+The MIT License disclaims warranties of any kind,
+whether express or implied, including warranties of:
+
+- Merchantability
+- Fitness for a particular purpose
+- Noninfringement
+
+Users are responsible for evaluating whether the software
+is appropriate for their intended applications.
+
+## 6. Limitation of Liability
+
+Under the terms of the MIT License, authors and copyright
+holders disclaim liability for claims, damages, or other
+liabilities arising from the software or its use.
+
+The precise scope and enforceability of these provisions
+may depend on applicable law.
+
+Refer to the LICENSE file for the authoritative wording.
+
+## 7. Third-Party Dependencies
+
+EveryO may integrate with external software libraries,
+development tools, and computing frameworks.
+
+Third-party dependencies remain subject to their
+respective licenses.
+
+The EveryO MIT License does not automatically replace
+or override those licenses.
+
+Developers and distributors should review applicable
+third-party copyright notices, license requirements,
+and redistribution obligations.
+
+## 8. Contributions
+
+EveryO welcomes contributions from the open-source
+community.
+
+Contributors should review:
+
+- CONTRIBUTING.md
+- CODE_OF_CONDUCT.md
+- GOVERNANCE.md
+- SECURITY.md
+
+Unless an applicable contribution agreement or explicit
+notice provides otherwise, contributions intentionally
+submitted for inclusion in the project are expected to
+be distributed under the project's MIT License.
+
+Contributors must have the necessary rights to submit
+their contributions.
+
+Copyright ownership is not automatically transferred
+to the project solely by submitting a contribution.
+
+## 9. Intellectual Property
+
+The MIT License grants broad copyright permissions
+regarding the licensed software.
+
+It does not expressly grant trademark rights to the
+EveryO project name, logos, or other brand identifiers.
+
+Any use of third-party trademarks remains subject
+to applicable law and relevant trademark policies.
+
+The MIT License also does not contain an express
+standalone patent license.
+
+## 10. Research and Production Use
+
+EveryO may be used for research, experimentation,
+prototyping, and production applications.
+
+The MIT License does not guarantee:
+
+- Model accuracy
+- Computational performance
+- Security
+- Regulatory compliance
+- Fitness for safety-critical applications
+- Compatibility with particular hardware
+- Continuous maintenance or technical support
+
+Users should independently validate software behavior
+and suitability for their environments.
+
+## 11. License Compliance
+
+Recipients distributing EveryO or substantial portions
+of its code should ensure that:
+
+1. The original copyright notice is preserved.
+2. The MIT permission notice is included.
+3. Applicable third-party licenses are respected.
+4. Distribution practices comply with applicable law.
+
+These points summarize compliance considerations;
+the LICENSE file remains the authoritative legal text.
+
+## 12. License Identification
+
+The project uses the SPDX license identifier:
+
+MIT
+
+The canonical SPDX reference is available at:
+
+https://spdx.org/licenses/MIT.html
+
+The Open Source Initiative license reference is:
+
+https://opensource.org/license/mit
+
+## 13. Governing License Text
+
+If any explanation in this document conflicts with
+the official MIT License included in the repository,
+the LICENSE file takes precedence as the project's
+licensing statement.
+
+This policy is informational and does not impose
+additional restrictions on MIT-licensed software.
+
+---
+
+Copyright © 2026 EveryO Contributors.
+
+Licensed under the MIT License.
+See LICENSE for the complete license terms.
