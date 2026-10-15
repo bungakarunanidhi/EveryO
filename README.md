@@ -16,6 +16,7 @@ Designed for readable implementations, reproducible experiments, and explicit va
 [![Ruff](https://img.shields.io/badge/code%20style-ruff-261230?logo=ruff&logoColor=white)](https://docs.astral.sh/ruff/)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-eb6834)](CONTRIBUTING.md)
 [![Stars](https://img.shields.io/github/stars/krishanth7/EveryO?style=flat&color=eda100)](https://github.com/krishanth7/EveryO/stargazers)
+[![GitGem](https://gitgem.org/api/badge/github/krishanth7/EveryO.svg)](https://gitgem.org/github/krishanth7/EveryO)
 
 **[What is EveryO?](#what-is-everyo) · [What you would use it for](#what-you-would-use-it-for) · [Quick start](#-quick-start-60-seconds) · [Capabilities](#-what-it-actually-does) · [Results](#-results-from-a-real-run) · [Correctness](#-correctness-is-the-feature) · [Architecture](#-architecture) · [Roadmap](#-roadmap--all-shipped) · [Contribute](#-contributing) · [Governance](#-governance-and-project-policies)**
 
